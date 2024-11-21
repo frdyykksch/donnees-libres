@@ -26,8 +26,8 @@ affirmez.*
 
 ## Auteurs
 
-- Nom, prénom, courriel, groupe
-- Nom, prénom, courriel, groupe
+- Kockisch, Frederik, frederik.kockisch@etu-upsaclay.fr, MI-3
+- Cassou, Julien, julien.cassou@etu-upsaclay.fr, MI-4
 
 +++
 
