@@ -6,6 +6,10 @@
 #include <string>
 using namespace std;
 
+        // Auteur
+        // Frederik Kockisch
+        // Toutes les fonctions
+
 /** Infrastructure minimale de test **/
 #define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
@@ -24,10 +28,11 @@ vector<int> litTableauAnnee(string nom_fichier) {
     string jour;
     int mariages;
     int annee;
-    vector<int> tabMariages(12, 0);
+    vector<int> tabMariages(13, 0);
 
     while(fichier >> annee >> jour >> mariages) {
         tabMariages[annee - 2010] += mariages;
+        // cerr << annee - 2010 << " " << tabMariages[annee - 2010] << endl;
     }
 
     fichier.close();
@@ -40,7 +45,7 @@ void testLitTableauAnnee() {
     CHECK(t[0] == 9195); // Nombre de mariages en 2010
     CHECK(t[3] == 9443); // Nombre de mariages en 2013
     CHECK(t[5] == 9046); // Nombre de mariages en 2015
-    CHECK(t[11] == 8484); // Nombre de mariages en 2022 // INDICE 11 (C'ETAIT 12)
+    CHECK(t[12] == 8484); // Nombre de mariages en 2022
 }
 
 /** Renvoie le numéro du jour correspondant à la chaîne de caractères
@@ -104,7 +109,8 @@ int somme(vector<int> t) {
     int somme = 0;
     for(int i = 0; i < t.size(); i++) {
         somme += t[i];
-    } return somme;
+    }
+    return somme;
 }
 
 /** Test de la fonction somme **/
@@ -120,8 +126,8 @@ void testSomme() {
  * (on arrondit à l'entier inférieur)
  **/
 int moyenne(vector<int> t) {
-    int sommeTab = somme(t);
-    return sommeTab / t.size();
+    int sum = somme(t);
+    return sum / t.size();
 }
 
 /** Test de la fonction moyenne **/
@@ -130,7 +136,6 @@ void testMoyenne() {
     CHECK(moyenne({1}) == 1);
     CHECK(moyenne({2,2,4,8}) == 4);
 }
-
 
 /** Renvoie l'indice de la valeur maximale du tableau
  * @param t, un tableau d'entier
@@ -158,6 +163,14 @@ void testIndiceMax() {
     CHECK(indiceMax({2,8,4,4}) == 1);
 }
 
+int chercheIndice(vector<string> t, string valeur) {
+    for(int i = 0; i < t.size(); i++) {
+        if(t[i] == valeur) {
+            return i;
+        }
+    } return -1;
+}
+
 /** Lance les fonctions de test puis affiche :
  * - le nombre total de mariages
  * - le nombre moyen de mariages célébrés par an
@@ -166,14 +179,24 @@ void testIndiceMax() {
  * - le pourcentage de mariages célébrés un samedi
  **/
 int main() {
-    // vector<int> t = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
-    // for(int i = 0; i < t.size(); i++) {
-    //     cout << i << " " << t[i] << endl;
-    // }
-    testLitTableauAnnee();
-    testIndiceJour();
-    testLitTableauJours();
-    testSomme();
-    testMoyenne();
-    testIndiceMax();
+
+    // testLitTableauAnnee();
+    // testIndiceJour();
+    // testLitTableauJours();
+    // testSomme();
+    // testMoyenne();
+    // testIndiceMax();
+
+    vector<int> t = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
+    vector<int> t1 = litTableauJours("donnees/statistiques-des-jours-des-mariages.txt");
+    cout << "Le nombre de total de mariages célébrés entre 2010 et 2022 est de " << somme(t1) << endl;
+    cout << "Le nombre de mariages célébrés en moyenne par an est de " << moyenne(t1) << endl;
+    
+    int m1 = indiceMax(t);
+    int m2 = indiceMax(t1);
+    cout << "L'année où l'on a célébré le plus de mariages est " << 2010 + m1 << " avec " << t[m1] << " mariages" << endl;
+    cout << "Le jour de la semaine où l'on a célébré le plus de mariage est le " << jours[m2] << " avec " << t1[m2] << " mariages" << endl;
+    
+    double samedi = t1[chercheIndice(jours, "Samedi")];
+    cout << "Le pourcentage de mariages célébrés le samedi est de " << samedi / somme(t1) * 100 << "%" << endl;
 }

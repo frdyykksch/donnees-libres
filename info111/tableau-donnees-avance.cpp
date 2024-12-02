@@ -6,6 +6,10 @@
 
 #include <iostream> // db
 
+        // Auteur
+        // Frederik Kockisch
+        // Toutes les fonctions
+
 int chercheIndice(vector<string> t, string valeur) {
     for(int i = 0; i < t.size(); i++) {
         if(t[i] == valeur) {

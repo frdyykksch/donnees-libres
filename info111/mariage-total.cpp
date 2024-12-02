@@ -6,7 +6,7 @@
 using namespace std;
 
 /** Calcule et affiche le nombre total de mariages célébrés entre 2010 et 2015 **/
-int main() {
+int main() { // Frederik Kockisch
     ifstream fichier("donnees/statistiques-des-jours-des-mariages.txt");
     string jour;
     int mariages;

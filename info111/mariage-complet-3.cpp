@@ -8,7 +8,6 @@
 #include "tableau-donnees-avance.hpp"
 using namespace std;
 
-
 /** Affiche :
  * - le nombre total de mariages
  * - le nombre moyen de mariages célébrés par an
