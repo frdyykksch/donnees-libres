@@ -42,13 +42,27 @@ void testLitTableauCSVSansColonnes() {
 
 int main() {
     cout << "Lecture d'un petit tableau avec litTableauCSV (avec colonnes)" << endl;
-    vector<vector<string>> t = litTableauCSV("donnees/donnees-test.csv",5);
-    afficheTableau(t);
+    vector<vector<string>> t1 = litTableauCSV("donnees/donnees-test.csv", 5);
+    vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv");
+    cerr << t[5][4] << endl;
+
+    for(int i = 0; i < 10; i++) {
+        for(int j = 0; j < t[i].size(); j++) {
+            cerr << "x" << t[i][j] << "x ";
+        } cerr << endl;
+    }
+    
+    cout << endl;
+    // afficheTableau(t);
+    cout << endl;
+
     cout << "Lancement des tests de litTableauCSVAvecColonnes" << endl;
     testLitTableauCSVAvecColonnes();
+
     cout << "Lecture d'un petit tableau avec litTableauCSV (sans colonnes)" << endl;
     t = litTableauCSV("donnees/donnees-test.csv");
     afficheTableau(t);
+
     cout << "Lancement des tests de litTableauCSVSansColonnes" << endl;
     testLitTableauCSVSansColonnes();
 }
