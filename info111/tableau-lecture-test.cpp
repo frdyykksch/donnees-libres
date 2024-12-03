@@ -26,6 +26,7 @@ void testLitTableau() {
 
 int main() {
     cout << "Lancement des tests de litTableau" << endl;
-    testLitTableau();
+    vector<vector<string>> t = litTableau("donnees/liste_des_prenoms.txt", 4);
+    cout << t.size();
+    // testLitTableau();
 }
-
