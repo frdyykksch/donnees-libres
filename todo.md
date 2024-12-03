@@ -9,5 +9,8 @@ julien
 - prenoms-tableau.cpp
 - 
 
+test failed in
+- P1E4
+- P3
 
-skip ex 5
+skipped ex 5

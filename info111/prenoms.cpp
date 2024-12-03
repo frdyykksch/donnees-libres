@@ -18,7 +18,7 @@ int main() { // Julien Cassou
         return 1;
     }
     cout << annee << endl;
-    ifstream prénoms("liste_des_prenoms.txt");
+    ifstream prénoms("donnees/liste_des_prenoms.txt");
     if (!prénoms) {
         cerr << "Erreur lors de l'ouverture du fichier" << endl;
         return 1;

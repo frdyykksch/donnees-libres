@@ -46,6 +46,7 @@ vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
     ifstream tableau(nom_fichier);
     vector<vector<string>> resultat; 
     string ligne;
+    
     while (getline(tableau, ligne)) {
         istringstream la_ligne(ligne);
         vector<string> ligne_renvoyé;
@@ -168,7 +169,7 @@ int main() {
     testColonne();
     testSelectLignes();
     string prénom;
-    vector<vector<string>> t = litTableau("liste_des_prenoms.txt", 4);
+    vector<vector<string>> t = litTableau("donnees/liste_des_prenoms.txt", 4);
     vector<int> naissances = conversionInt(colonne(t, 3));
     cout << "Nombre total de naissances : " << somme(naissances) << endl;
    

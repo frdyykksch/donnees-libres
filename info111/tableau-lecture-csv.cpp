@@ -23,6 +23,7 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
 
     string ligne;
     getline(fichier, ligne);
+
     while (getline(fichier, ligne)) {
         istringstream la_ligne(ligne);
         vector<string> ligne_renvoyé;
