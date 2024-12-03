@@ -6,19 +6,16 @@
 #include "tableau-lecture.hpp"
 using namespace std;
 
-
 /**
  * Demande à l'utilisateur un prénom et calcule
  * - le nombre de garçons et filles à qui l'on a donné ce prénom
  * - la meilleure année pour ce prénom pour les garçons et filles
  **/
 int main() {
-    testLitTableau();
-    testColonne();
-    testSelectLignes();
+    vector<vector<string>> t = litTableau("donnees/liste_des_prenoms.txt", 4);
     string prénom;
-    vector<vector<string>> t = litTableau("liste_des_prenoms.txt", 4);
     vector<int> naissances = conversionInt(colonne(t, 3));
+
     cout << "Nombre total de naissances : " << somme(naissances) << endl;
    
     //demande prénom
@@ -28,6 +25,7 @@ int main() {
     cout << prenom << endl;
 
     vector<vector<string>> lignes_Garcons = selectLignes(selectLignes(t, 0, "M"), 2, prenom);
+    cerr << lignes_Garcons[0][0] << endl;
     vector<vector<string>> lignes_Filles = selectLignes(selectLignes(t, 0, "F"), 2, prenom);
     
 
