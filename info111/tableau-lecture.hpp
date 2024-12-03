@@ -12,4 +12,3 @@ using namespace std;
  * @return un tableau de chaines de caractères à deux dimensions
  **/
 vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes);
-

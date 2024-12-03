@@ -4,6 +4,9 @@
 #include <sstream>
 #include "tableau-donnees.hpp"
 
+        // Auteur
+        // Julien Cassou
+
 void afficheTableau(vector<vector<string>> tableau) {
     for(int i = 0; i < tableau.size(); i++) {
         for(int j = 0; j < tableau[i].size(); j++) {
@@ -26,7 +29,7 @@ int somme(vector<int> t) {
 
 
 int indiceMax(vector<int> t) {
-    int greatestVal = t[0];
+    int greatestVal = 0;
     int greatestInd = 0;
     if(t.size() > 0) {
         for(int i = 0; i < t.size(); i++) {

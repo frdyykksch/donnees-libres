@@ -18,7 +18,7 @@ int chercheIndice(vector<string> t, string valeur) {
     } return -1;
 }
 
-// mine
+// ajouté
 bool inVec(vector<string> t, string s) {
     for(int i = 0; i < t.size(); i++) {
         if(t[i] == s) {
@@ -27,7 +27,6 @@ bool inVec(vector<string> t, string s) {
     } return false;
 }
 
-// b you wont believe why i struggled so hard on this damn.. next time dont init the vec at sizr 1 haha
 vector<string> distinct(vector<vector<string>> data, int j) {
     vector<string> valeursDistinctes;
     for(int i = 0; i < data.size(); i++) {
@@ -41,13 +40,14 @@ vector<string> distinct(vector<vector<string>> data, int j) {
     } return valeursDistinctes;
 }
 
-// mine, look awy b
+// ajouté
 int conversionSingleInt(string t) {
     int resultat;
     istringstream(t) >> resultat;
     return resultat;
 }
-// samesame
+
+// ajouté
 int conversionSingleDouble(string t) {
     double resultat;
     istringstream(t) >> resultat;
@@ -55,7 +55,7 @@ int conversionSingleDouble(string t) {
 }
 
 vector<double> conversionDouble(vector<string> t) {
-    vector<double> resultat = vector<double>(t.size());
+    vector<double> resultat(t.size());
     for(int i = 0; i < t.size(); i++) {
         istringstream(t[i]) >> resultat[i];
     }
@@ -63,12 +63,6 @@ vector<double> conversionDouble(vector<string> t) {
 }
 
 vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {
-    // hold on tight for this one.. we got 1 data matrix, then we got 1 vector with the data we 
-    // want to sort out like indices and then j1 the col of the sorted out data from before
-    // and then j2 the data as intstrings we need to add by indice.
-    // just look at the header dawg 
-
-    // bro nvm we good didnt take as long as i thought.. just used some o my own funcs if thats ok :)
     vector<int> intStrValues(valeurs.size());
     for(int i = 0; i < data.size(); i++) {
         for(int j = 0; j < data[i].size(); j++) {
@@ -83,29 +77,44 @@ vector<int> groupByInt(vector<vector<string>> data, vector<string> valeurs, int 
 }
 
 vector<double> groupByDouble(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {
-    vector<double> intStrValues(valeurs.size());
+    vector<double> doubStrValues(valeurs.size());
     for(int i = 0; i < data.size(); i++) {
         for(int j = 0; j < data[i].size(); j++) {
             if(j == j2 && inVec(valeurs,data[i][j1]))
                 // cerr << data[i][j2] << " - "; // db
-                intStrValues[chercheIndice(valeurs,data[i][j1])] += conversionSingleDouble(data[i][j2]);
+                doubStrValues[chercheIndice(valeurs,data[i][j1])] += conversionSingleDouble(data[i][j2]);
                 // cerr << intStrValues[chercheIndice(valeurs,data[i][1])] << " ";
         }
     } 
     // for(auto val:intStrValues) cerr << val << " ";
-    return intStrValues;
+    return doubStrValues;
 }
 
 template<class T>
 vector<T> conversion(vector<string> t) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction conversion non implantée ligne 36");
+    vector<T> resultat(t.size());
+    for(int i = 0; i < t.size(); i++) {
+        istringstream(t[i]) >> resultat[i];
+    }
+    return resultat;
 }
 
 template<class T>
 vector<T> groupBy(vector<vector<string>> data, vector<string> valeurs, int j1, int j2) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction groupBy non implantée ligne 42");
+    vector<T> strValues(valeurs.size(), T());
+    for(int i = 0; i < data.size(); i++) {
+        for(int j = 0; j < data[i].size(); j++) {
+            if(j == j2 && inVec(valeurs, data[i][j1])) {
+                int index = chercheIndice(valeurs, data[i][j1]);
+                if (is_same<T, int>::value) { // aide par stackoverflow - https://stackoverflow.com/questions/992471/how-to-query-ift-int-with-template-class
+                    strValues[index] += conversionSingleInt(data[i][j2]);
+                } else if (is_same<T, double>::value) {
+                    strValues[index] += conversionSingleDouble(data[i][j2]);
+                }
+            }
+        }
+    }
+    return strValues;
 }
 
 // Force l'instanciation des templates
@@ -113,4 +122,3 @@ template vector<int> conversion<int>(vector<string> t);
 template vector<double> conversion<double>(vector<string> t);
 template vector<int> groupBy<int>(vector<vector<string>> data, vector<string> valeurs, int j1, int j2);
 template vector<double> groupBy<double>(vector<vector<string>> data, vector<string> valeurs, int j1, int j2);
-

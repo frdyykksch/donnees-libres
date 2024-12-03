@@ -142,7 +142,7 @@ void testMoyenne() {
  * @return l'indice de la valeur maximale ou -1 si le tableau est vide
  **/
 int indiceMax(vector<int> t) {
-    int greatestVal = t[0];
+    int greatestVal = 0;
     int greatestInd = 0;
     if(t.size() > 0) {
         for(int i = 0; i < t.size(); i++) {
@@ -180,12 +180,12 @@ int chercheIndice(vector<string> t, string valeur) {
  **/
 int main() {
 
-    // testLitTableauAnnee();
-    // testIndiceJour();
-    // testLitTableauJours();
-    // testSomme();
-    // testMoyenne();
-    // testIndiceMax();
+    testLitTableauAnnee();
+    testIndiceJour();
+    testLitTableauJours();
+    testSomme();
+    testMoyenne();
+    testIndiceMax();
 
     vector<int> t = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
     vector<int> t1 = litTableauJours("donnees/statistiques-des-jours-des-mariages.txt");
