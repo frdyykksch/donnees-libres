@@ -6,9 +6,7 @@
 #include <string>
 using namespace std;
 
-        // Auteur
         // Frederik Kockisch
-        // Toutes les fonctions
 
 /** Infrastructure minimale de test **/
 #define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
@@ -34,7 +32,6 @@ vector<int> litTableauAnnee(string nom_fichier) {
         tabMariages[annee - 2010] += mariages;
         // cerr << annee - 2010 << " " << tabMariages[annee - 2010] << endl;
     }
-
     fichier.close();
     return tabMariages;
 }
@@ -189,8 +186,8 @@ int main() {
 
     vector<int> t = litTableauAnnee("donnees/statistiques-des-jours-des-mariages.txt");
     vector<int> t1 = litTableauJours("donnees/statistiques-des-jours-des-mariages.txt");
-    cout << "Le nombre de total de mariages célébrés entre 2010 et 2022 est de " << somme(t1) << endl;
-    cout << "Le nombre de mariages célébrés en moyenne par an est de " << moyenne(t1) << endl;
+    cout << "Le nombre de total de mariages célébrés entre 2010 et 2022 est de " << somme(t) << endl;
+    cout << "Le nombre de mariages célébrés en moyenne par an est de " << moyenne(t) << endl;
     
     int m1 = indiceMax(t);
     int m2 = indiceMax(t1);

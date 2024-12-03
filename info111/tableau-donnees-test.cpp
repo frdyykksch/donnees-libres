@@ -26,13 +26,17 @@ void testMoyenne() {
 }
 
 void testSomme() {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction testSomme non implantée ligne 30");
+    CHECK(somme({1,2,3}) == 6);
+    CHECK(somme({}) == 0);
+    CHECK(somme({2,2,4,8}) == 16);
 }
 
 void testIndiceMax() {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction testIndiceMax non implantée ligne 35");
+    CHECK(indiceMax({}) == -1);
+    CHECK(indiceMax({1,2,3}) == 2);
+    CHECK(indiceMax({1,3,2}) == 1);
+    CHECK(indiceMax({1}) == 0);
+    CHECK(indiceMax({2,8,4,4}) == 1);
 }
 
 void testColonne() {

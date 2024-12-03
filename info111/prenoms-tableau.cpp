@@ -7,6 +7,8 @@
 #include <sstream>
 using namespace std;
 
+        // Julien Cassou
+
 /** Infrastructure minimale de test **/
 #define CHECK(test) if (!(test)) cerr << "Test failed in file " << __FILE__ << " line " << __LINE__ << ": " #test << endl
 
@@ -21,8 +23,12 @@ vector<vector<string>> tableauTest = {
  * @param tableau un tableau à deux dimensions
  **/
 void afficheTableau(vector<vector<string>> tableau) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction afficheTableau non implantée ligne 25");
+    for (auto ligne : tableau) {
+        for (auto element : ligne) {
+            cout << element << " ";
+        }
+        cout << endl;
+    }
 }
 
 void testAfficheTableau() {
@@ -37,8 +43,18 @@ void testAfficheTableau() {
  * @return un tableau de chaines de caractères à deux dimensions
  **/
 vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction litTableau non implantée ligne 41");
+    ifstream tableau(nom_fichier);
+    vector<vector<string>> resultat; 
+    string ligne;
+    while (getline(tableau, ligne)) {
+        istringstream la_ligne(ligne);
+        vector<string> ligne_renvoyé;
+        for (int i = 0; i < nb_colonnes; i++) {
+            la_ligne >> ligne_renvoyé[i];
+        }
+        resultat.push_back(ligne_renvoyé);
+    }
+    return resultat;
 }
 
 /** Test de la fonction litTableau **/
@@ -56,8 +72,12 @@ void testLitTableau() {
  * @param i un numéro de colonne
  * @return la colonne j, représentée par un vecteur de chaines de caractères
  **/
-vector<string> colonne(vector<vector<string>> t, int j) {
-
+vector<string> colonne(vector<vector<string>> t, int i) {
+    vector<string> j;
+    for (int k = 0; k < t.size(); k++ ) {
+        j.push_back(t[k][i]);    
+    }
+    return j;
 }
 
 /** Test de la fonction colonne **/
@@ -87,20 +107,30 @@ void testConversionInt() {
 
 /** copier la fonction somme déjà écrite **/
 int somme(vector<int> t) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction somme non implantée ligne 92");
+    int somme = 0;
+    for(int i = 0; i < t.size(); i++) {
+        somme += t[i];
+    } return somme;
 }
 
 /** copier la fonction moyenne déjà écrite **/
 int moyenne(vector<int> t) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction moyenne non implantée ligne 98");
+    int sommeTab = somme(t);
+    return sommeTab / t.size();
 }
 
 /** copier la fonction indiceMax déjà écrite **/
 int indiceMax(vector<int> t) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction indiceMax non implantée ligne 104");
+    int greatestVal = 0;
+    int greatestInd = 0;
+    if(t.size() > 0) {
+        for(int i = 0; i < t.size(); i++) {
+            if(t[i] > greatestVal) {
+                greatestVal = t[i];
+                greatestInd = i;
+            }
+        } return greatestInd; }
+    return -1;
 }
 
 /** Sélection des lignes d'un tableau de données
@@ -112,8 +142,13 @@ int indiceMax(vector<int> t) {
  *  que la colonne j ait la valeur correspondant au critère
  **/
 vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction selectLignes non implantée ligne 117");
+    vector<vector<string>> resultat;
+    for (auto ligne : t) {
+        if (ligne[j] == valeur) {
+            resultat.push_back(ligne);
+        }
+    }
+    return resultat;
 }
 
 /** Test de la fonction selectLignes **/
@@ -129,7 +164,48 @@ void testSelectLignes() {
  * - la meilleure année pour ce prénom pour les garçons et filles
  **/
 int main() {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 134");
-}
+    testLitTableau();
+    testColonne();
+    testSelectLignes();
+    string prénom;
+    vector<vector<string>> t = litTableau("liste_des_prenoms.txt", 4);
+    vector<int> naissances = conversionInt(colonne(t, 3));
+    cout << "Nombre total de naissances : " << somme(naissances) << endl;
+   
+    //demande prénom
+    string prenom;
+    cout << "Choississez un prénom : ";
+    cin >> prenom;  
+    cout << prenom << endl;
 
+    vector<vector<string>> lignes_Garcons = selectLignes(selectLignes(t, 0, "M"), 2, prenom);
+    vector<vector<string>> lignes_Filles = selectLignes(selectLignes(t, 0, "F"), 2, prenom);
+    
+
+    //affiche nombre de garçons 
+    if (lignes_Garcons.size() == 0) {
+        cout << "Le prénom " << prenom << " n'a été donné à aucun garçon entre 2006 et 2023" << endl;
+    } else {
+        vector<int> naissances_garcons = conversionInt(colonne(lignes_Garcons, 3));
+        int total_garcons = somme(naissances_garcons);
+
+        vector<string> annees_garcons = colonne(lignes_Garcons, 1);
+        int idx_max_garcons = indiceMax(naissances_garcons);
+        
+        cout << "Le prénom " << prenom << " a été donné à " << total_garcons << " garçons entre 2006 et 2023" << endl;
+        cout << "L'année la plus forte pour les garçons est " << annees_garcons[idx_max_garcons] << " avec " << naissances_garcons[idx_max_garcons] << " naissances" << endl;
+    }
+
+    if (lignes_Filles.size() == 0) {
+        cout << "Le prénom " << prenom << " n'a été donné à aucune fille entre 2006 et 2023" << endl;
+    } else {
+        vector<int> naissances_filles = conversionInt(colonne(lignes_Filles, 3));
+        int total_filles = somme(naissances_filles);
+        
+        vector<string> annees_filles = colonne(lignes_Filles, 1);
+        int idx_max_filles = indiceMax(naissances_filles);
+        
+        cout << "Le prénom " << prenom << " a été donné à " << total_filles << " filles entre 2006 et 2023" << endl;
+        cout << "L'année la plus forte est " << annees_filles[idx_max_filles] << " avec " << naissances_filles[idx_max_filles] << " naissances" << endl;
+    }
+}

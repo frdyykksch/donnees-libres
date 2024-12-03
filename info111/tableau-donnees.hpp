@@ -42,7 +42,7 @@ vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string vale
  * @param i un numéro de colonne
  * @return la colonne j, représentée par un vecteur de chaines de caractères
  **/
-vector<string> colonne(vector<vector<string>> t, int j);
+vector<string> colonne(vector<vector<string>> t, int i);
 
 /** Convertit un tableau de chaines de caractères en un tableau d'entiers
  * @param t, un vecteur de chaines de caractères

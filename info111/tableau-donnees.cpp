@@ -4,7 +4,6 @@
 #include <sstream>
 #include "tableau-donnees.hpp"
 
-        // Auteur
         // Julien Cassou
 
 void afficheTableau(vector<vector<string>> tableau) {
@@ -41,8 +40,12 @@ int indiceMax(vector<int> t) {
     return -1;
 }
 
-vector<string> colonne(vector<vector<string>> t, int j) {
-    
+vector<string> colonne(vector<vector<string>> t, int i) {
+    vector<string> j;
+    for (int k = 0; k < t.size(); k++ ) {
+        j.push_back(t[k][i]);    
+    }
+    return j;
 }
 
 
@@ -55,7 +58,12 @@ vector<int> conversionInt(vector<string> t) {
 }
 
 vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction selectLignes non implantée ligne 41");
+    vector<vector<string>> resultat;
+    for (auto ligne : t) {
+        if (ligne[j] == valeur) {
+            resultat.push_back(ligne);
+        }
+    }
+    return resultat;
 }
 

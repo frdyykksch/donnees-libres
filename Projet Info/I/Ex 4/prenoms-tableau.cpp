@@ -184,7 +184,7 @@ int main() {
     //affiche nombre de garçons 
     if (lignes_Garcons.size() == 0) {
         cout << "Le prénom " << prenom << " n'a été donné à aucun garçon entre 2006 et 2023" << endl;
-    }else {
+    } else {
         vector<int> naissances_garcons = conversionInt(colonne(lignes_Garcons, 3));
         int total_garcons = somme(naissances_garcons);
         vector<string> annees_garcons = colonne(lignes_Garcons, 1);
@@ -207,5 +207,3 @@ int main() {
         cout << "Le prénom " << prenom << " a été donné à " << total_filles << " filles entre 2006 et 2023" << endl;
         cout << "L'année la plus forte est " << annees_filles[idx_max_filles] 
              << " avec " << naissances_filles[idx_max_filles] << " naissances" << endl;
-    
-
