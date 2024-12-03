@@ -25,11 +25,11 @@ bool inVec(vector<string> t, string s) {
     } return false;
 }
 
-vector<string> distinct(vector<vector<string>> data, int j) {
+vector<string> distinct(vector<vector<string>> data, int j) { // check
     vector<string> valeursDistinctes;
     for(int i = 0; i < data.size(); i++) {
         for(int k = 0; k < data[i].size(); k++) {
-            if(k == j && !(inVec(valeursDistinctes, data[i][k]))) {
+            if(k == j && chercheIndice(valeursDistinctes, data[i][k]) == -1) {
                 // cerr << inVec(valeursDistinctes, data[i][k]) << " ";
                 // cerr << data[i][k] << " ";
                 valeursDistinctes.push_back(data[i][k]);
