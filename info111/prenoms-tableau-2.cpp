@@ -13,23 +13,21 @@ using namespace std;
  **/
 int main() {
     vector<vector<string>> t = litTableau("donnees/liste_des_prenoms.txt", 4);
-    string prénom;
     vector<int> naissances = conversionInt(colonne(t, 3));
 
     cout << "Nombre total de naissances : " << somme(naissances) << endl;
    
-    //demande prénom
+    // demande prénom
     string prenom;
     cout << "Choississez un prénom : ";
     cin >> prenom;  
     cout << prenom << endl;
 
     vector<vector<string>> lignes_Garcons = selectLignes(selectLignes(t, 0, "M"), 2, prenom);
-    cerr << lignes_Garcons[0][0] << endl;
     vector<vector<string>> lignes_Filles = selectLignes(selectLignes(t, 0, "F"), 2, prenom);
     
 
-    //affiche nombre de garçons 
+    // affiche nombre de garçons 
     if (lignes_Garcons.size() == 0) {
         cout << "Le prénom " << prenom << " n'a été donné à aucun garçon entre 2006 et 2023" << endl;
     } else {

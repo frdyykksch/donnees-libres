@@ -23,8 +23,21 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
  **/
 vector<int> creeTableauAnnee(vector<vector<string>> data) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction creeTableauAnnee non implantée ligne 27");
+    vector<int> result(annees.size(), 0);
+
+    for (auto row : data) {
+        if (row.size() < 3) 
+            continue;
+
+        int year = stoi(row[0]);
+        int marriages = stoi(row[2]);
+        int index = year - 2010;
+
+        if (index >= 0 && index < result.size()) {
+            result[index] += marriages;
+        }
+    }
+    return result;
 }
 
 /** Test de la fonction CreeTableauAnnee **/

@@ -49,7 +49,7 @@ vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
     
     while (getline(tableau, ligne)) {
         istringstream la_ligne(ligne);
-        vector<string> ligne_renvoyé;
+        vector<string> ligne_renvoyé(nb_colonnes);
         for (int i = 0; i < nb_colonnes; i++) {
             la_ligne >> ligne_renvoyé[i];
         }
