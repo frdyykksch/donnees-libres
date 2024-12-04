@@ -25,9 +25,9 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
 vector<int> creeTableauAnnee(vector<vector<string>> data) {
     vector<int> resultat(annees.size(), 0);
 
-    for (auto row : data) {
-        int annee = stoi(row[0]);
-        int marriages = stoi(row[2]);
+    for (auto ligne : data) {
+        int annee = stoi(ligne[0]);
+        int marriages = stoi(ligne[2]);
         int index = annee - 2010;
 
         resultat[index] += marriages;
@@ -76,9 +76,10 @@ void testIndiceJour() {
  **/
 vector<int> creeTableauJours(vector<vector<string>> data) {
     vector<int> resultat(jours.size(), 0);
-    for (auto row : data) {
-        int indexJour = indiceJour(row[1]);
-        int marriages = stoi(row[2]);
+    
+    for (auto ligne : data) {
+        int indexJour = indiceJour(ligne[1]);
+        int marriages = stoi(ligne[2]);
         resultat[indexJour] += marriages;
     }
     return resultat;
