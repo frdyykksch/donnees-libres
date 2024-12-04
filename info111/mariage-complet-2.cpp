@@ -23,21 +23,16 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
  **/
 vector<int> creeTableauAnnee(vector<vector<string>> data) {
-    vector<int> result(annees.size(), 0);
+    vector<int> resultat(annees.size(), 0);
 
     for (auto row : data) {
-        if (row.size() < 3) 
-            continue;
-
-        int year = stoi(row[0]);
+        int annee = stoi(row[0]);
         int marriages = stoi(row[2]);
-        int index = year - 2010;
+        int index = annee - 2010;
 
-        if (index >= 0 && index < result.size()) {
-            result[index] += marriages;
-        }
+        resultat[index] += marriages;
     }
-    return result;
+    return resultat;
 }
 
 /** Test de la fonction CreeTableauAnnee **/
@@ -80,8 +75,13 @@ void testIndiceJour() {
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
  **/
 vector<int> creeTableauJours(vector<vector<string>> data) {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction creeTableauJours non implantée ligne 71");
+    vector<int> resultat(jours.size(), 0);
+    for (auto row : data) {
+        int indexJour = indiceJour(row[1]);
+        int marriages = stoi(row[2]);
+        resultat[indexJour] += marriages;
+    }
+    return resultat;
 }
 
 /** Test de la fonction litTableauJours **/
@@ -102,7 +102,7 @@ void testCreeTableauJours() {
  * - le pourcentage de mariages célébrés un samedi
  **/
 int main() {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 93");
+    testIndiceJour();
+    testCreeTableauJours();
 }
 
