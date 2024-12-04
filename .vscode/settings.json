@@ -64,6 +64,7 @@
     "ostream": "cpp",
     "stdexcept": "cpp",
     "sstream": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "vector": "cpp"
   }
 }
