@@ -24,22 +24,13 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
         vector<string> ligne_renvoye;
         string valeur;
         
-        for (int i = 0; i < nb_colonnes && getline(la_ligne, valeur, ';'); i++) {
-            ligne_renvoye.push_back(valeur);
+        for (int i = 0; i < nb_colonnes; i++) {
+            if (getline(la_ligne, valeur, ';')) {
+                ligne_renvoye.push_back(valeur);
+            }
         }
-        
-        if (ligne_renvoye.size() == nb_colonnes) {
-            resultat.push_back(ligne_renvoye);
-        }
+        resultat.push_back(ligne_renvoye);
     }
-
-    for(size_t j = 0; j < resultat.size(); j++) {
-        for(size_t i = 0; i < resultat[j].size(); i++) {
-            cerr << resultat[j][i] << " ";
-        }
-        cerr << endl;
-    }
-
     return resultat;
 }
 
