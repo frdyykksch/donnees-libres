@@ -32,6 +32,7 @@ void testLitTableauCSVSansColonnes() {
     CHECK(t[0][1] == "M");
     CHECK(t[3][3] == "Olivia");
     CHECK(t[5][4] == "71");
+
     t = litTableauCSV("donnees/statistiques-des-jours-des-mariages.csv");
     CHECK(t.size() == 91);
     CHECK(t[0].size() == 3);

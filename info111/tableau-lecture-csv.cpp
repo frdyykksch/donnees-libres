@@ -16,37 +16,38 @@
 vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
     vector<vector<string>> resultat;
     ifstream fichier(nom_fichier);
-
-    if (!fichier) {
-        throw runtime_error("Impossible d'ouvrir le fichier");
-    }
     string ligne;
 
     getline(fichier, ligne);
-    while (getline(fichier, ligne)) {
-        istringstream la_ligne(ligne);
+    while (fichier) {
         vector<string> ligne_renvoye;
         string valeur;
         
         for (int i = 0; i < nb_colonnes; i++) {
-            if (!getline(la_ligne, valeur, ';')) {
-                throw runtime_error("Nombre incorrect de colonnes dans le fichier");
-            }
+            getline(fichier, valeur, ';');
             ligne_renvoye.push_back(valeur);
+            
+            for(auto val : ligne_renvoye) {
+                cerr << val << " ";
+            }
         }
         resultat.push_back(ligne_renvoye);
     }
+
+    
+
+    for(int j = 0; j < 10; j++) {
+        for(int i = 0; i < resultat[j].size(); i++) {
+            cerr << resultat[j][i] << " ";
+        } cerr << endl;
+    }
+
     return resultat;
 }
 
 vector<vector<string>> litTableauCSV(string nom_fichier) {
     vector<vector<string>> resultat;
     ifstream fichier(nom_fichier);
-
-    if (!fichier) {
-        throw runtime_error("Impossible d'ouvrir le fichier");
-    }
-    
     string ligne;
     getline(fichier, ligne);
     while (getline(fichier, ligne)) {
