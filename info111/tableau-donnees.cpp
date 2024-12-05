@@ -57,7 +57,7 @@ vector<int> conversionInt(vector<string> t) {
     return resultat;
 }
 
-vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
+vector<vector<string>> selectColones(vector<vector<string>> t, int j, string valeur) {
     vector<vector<string>> resultat;
     for (auto ligne : t) {
         if (ligne[j] == valeur) {

@@ -19,7 +19,7 @@ int main() {
         return 1;
     }
     
-    ifstream prénoms("liste_des_prenoms.csv");
+    ifstream prénoms("donnees/liste_des_prenoms.csv");
     if (!prénoms) {
         cerr << "Erreur lors de l'ouverture du fichier" << endl;
         return 1;
