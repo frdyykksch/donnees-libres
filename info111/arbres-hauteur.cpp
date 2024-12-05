@@ -9,7 +9,6 @@ using namespace std;
  * parmi les "arbres remarquables"
  **/
 int main() {
-    // Remplacez cette ligne et la suivante par le code adéquat
-    throw runtime_error("Fonction main non implantée ligne 13");
+    
 }
 

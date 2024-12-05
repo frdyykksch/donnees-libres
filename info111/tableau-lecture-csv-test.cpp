@@ -17,10 +17,8 @@ vector<vector<string>> tableauTest = {
 vector<vector<string>> petites_donnees = { { "a0", "b0"}, { "a1", "b1" } };
 
 void testLitTableauCSVAvecColonnes() {
-    cerr << "test 1" << endl;
     CHECK( litTableauCSV("donnees/donnees-test.csv", 5) == tableauTest);
     vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv", 5);
-    cerr << t.size() << endl;
     CHECK(t.size() == 25465);
     CHECK(t[0][1] == "M");
     CHECK(t[3][3] == "Olivia");

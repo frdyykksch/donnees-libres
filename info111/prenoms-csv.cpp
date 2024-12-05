@@ -19,18 +19,12 @@ int main() {
         return 1;
     }
     
-    ifstream prénoms("liste_des_prenoms.csv");
-    if (!prénoms) {
-        cerr << "Erreur lors de l'ouverture du fichier" << endl;
-        return 1;
-    }   
+    ifstream prénoms("donnees/liste_des_prenoms.csv");
     
-    // Déclaration des variables en dehors de la boucle
     int total_naissances = 0;
     int nombreMax = 0;
     string prenomMax = "";
     
-    // Lecture du fichier  
     string ligne;
     while (getline(prénoms, ligne)) {
         stringstream ligne_actuelle(ligne);
