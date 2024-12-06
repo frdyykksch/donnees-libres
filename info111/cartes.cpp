@@ -6,7 +6,7 @@
 #include "tableau-lecture-csv.hpp"
 
 using namespace std;
-#include "SFML/include/SFML/Graphics.hpp"
+#include "lib/primitives.hpp"
 
 using namespace sf;
 
