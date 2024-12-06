@@ -52,12 +52,19 @@ l'implantation, ainsi que les éléments factuels motivant cette
 confiance: présence de tests, bogues et limitations connus, etc.
 
 - Partie 1 :
-  - Exercice 1 : ...
-  - Exercice 2 : ...
+  - Exercice 1 : Réalisé par Frederik Kockisch
+  - Exercice 2 : Réalisé par Julien Cassou
+  - Exercice 3 : Réalisé par Frederik Kockisch
+  - Exercice 4 : Réalisé par Julien Cassou
+  - Exercice 5 : Réalisé par Frederik Kockisch
+- Partie 2 : 
+  - Exercice 6 : Réalisé par Frederik Kockisch
+- Partie 3 :
+  - Exercice 7 : Réalisé par Julien Cassou
+  - Exercice 8 : Réalisé par Julien Cassou / Frederik Kockisch
+- Partie 4 :
   - ...
-- Partie 2 : ...
-- ...
-
+    
 :::
 
 +++
