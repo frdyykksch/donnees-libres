@@ -20,6 +20,7 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
 
     getline(fichier, ligne);
     while (fichier) {
+    while (fichier) {
         vector<string> ligne_renvoye;
         string valeur;
         
