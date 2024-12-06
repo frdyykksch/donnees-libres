@@ -20,18 +20,23 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
 
     getline(fichier, ligne);
     while (fichier) {
+    while (fichier) {
         vector<string> ligne_renvoye;
         string valeur;
         
         for (int i = 0; i < nb_colonnes-1; i++) {
             getline(fichier, valeur, ';');
             ligne_renvoye.push_back(valeur);
-        }
-        getline(fichier, valeur, ';');
+        } 
+        getline(fichier, valeur);
         
-        if (fichier) {
-            resultat.push_back(ligne_renvoye);
+        if(valeur.size() > 0 && valeur[valeur.length()-1] == '\r') {
+            valeur.resize(valeur.length() - 1);
         }
+        ligne_renvoye.push_back(valeur);
+
+        if(fichier)
+        resultat.push_back(ligne_renvoye);
     }
     return resultat;
 }
@@ -42,11 +47,10 @@ vector<vector<string>> litTableauCSV(string nom_fichier) {
     string ligne;
     getline(fichier, ligne);
     while (getline(fichier, ligne)) {
-        istringstream la_ligne(ligne);
         vector<string> ligne_renvoye;
         string valeur;
 
-        while (getline(la_ligne, valeur, ';')) {
+        while (getline(fichier, valeur, ';')) {
             ligne_renvoye.push_back(valeur);
         }
         resultat.push_back(ligne_renvoye);

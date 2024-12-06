@@ -14,25 +14,20 @@ int main() {
     int annee;
     cout << "Entrez une année entre 2004 et 2023 :" << endl;
     cin >> annee;
+    
     if (annee < 2004 || annee > 2023) {
         cerr << "L'année n'est pas entre 2004 et 2023" << endl;
         return 1;
     }
     
-    ifstream prénoms("donnees/liste_des_prenoms.csv");
-    if (!prénoms) {
-        cerr << "Erreur lors de l'ouverture du fichier" << endl;
-        return 1;
-    }   
+    ifstream prenoms("donnees/liste_des_prenoms.csv");
     
-    // Déclaration des variables en dehors de la boucle
     int total_naissances = 0;
     int nombreMax = 0;
     string prenomMax = "";
     
-    // Lecture du fichier  
     string ligne;
-    while (getline(prénoms, ligne)) {
+    while (getline(prenoms, ligne)) {
         stringstream ligne_actuelle(ligne);
         string nombre_str, MF, annee_naissance, prenom, total;
         int nombre, annee_naissance_int;
