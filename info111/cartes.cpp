@@ -11,5 +11,10 @@ using namespace std;
 using namespace sf;
 
 int main() {
+    RenderWindow w(VideoMode(750, 750));
 	draw_point(w, {center.x + r * cos(t), center.y + r * sin(t)}, Color:: color);
 }
+
+
+
+
