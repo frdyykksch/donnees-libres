@@ -19,7 +19,7 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
     string ligne;
 
     getline(fichier, ligne);
-    while (getline(fichier, ligne)) {
+    while (fichier) {
         vector<string> ligne_renvoye;
         string valeur;
         
@@ -39,11 +39,6 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
 vector<vector<string>> litTableauCSV(string nom_fichier) {
     vector<vector<string>> resultat;
     ifstream fichier(nom_fichier);
-
-    if (!fichier) {
-        throw runtime_error("Impossible d'ouvrir le fichier");
-    }
-    
     string ligne;
     getline(fichier, ligne);
     while (getline(fichier, ligne)) {
