@@ -10,6 +10,18 @@ using namespace std;
 #include "lib/primitives.hpp"
 
 int main() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    RenderWindow w(VideoMode(750, 750));
+	draw_point(w, {center.x + r * cos(t), center.y + r * sin(t)}, Color:: color);
+}
+
+
+
+
+=======
+>>>>>>> 7b44ba366e90582192999730b3638725703bebe8
     // Crée une fenêtre de taille 640x480
     RenderWindow window(VideoMode(640, 480), "Ma super fenêtre");
 
@@ -26,4 +38,10 @@ int main() {
     sleep(seconds(10));
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 920de422332d64e9fa439204918c57eb3bd268e4
+>>>>>>> 7b44ba366e90582192999730b3638725703bebe8
