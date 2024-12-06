@@ -15,7 +15,7 @@ using namespace std;
     // nom = 15
 
 int main() {
-    vector<vector<string>> t = litTableauCSV("donnees/arbresremarquablesparis.csv", 35  );
+    vector<vector<string>> t = litTableauCSV("donnees/arbresremarquablesparis.csv", 35);
     double hauteur_max = 0.0;
     int index_max = 0;
     vector<string> C = colonne(t, 8);
