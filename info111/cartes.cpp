@@ -9,6 +9,8 @@
 using namespace std;
 using namespace sf;
 
+        // Julien Cassou / Frederik Kockisch
+
 // compilation : g++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes
 const double PI = 3.14159265359;
 
@@ -55,9 +57,9 @@ int main() {
     vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv", 4);
 
     // Création de la fenêtre avec carte fond
-    RenderWindow window(VideoMode(1920, 1080), "Carte des stations Vélib");
+    RenderWindow window(VideoMode(1536, 959), "Carte des stations Vélib");
     Texture texture;
-    texture.loadFromFile("donnees/Paris_plan.png");
+    texture.loadFromFile("donnees/paris-carte.png");
     Sprite background(texture);
     window.draw(background);
 
@@ -65,31 +67,27 @@ int main() {
     vector<string> position_str = colonne(stations, 3);
     vector<string> capacite_str = colonne(stations, 2);
 
-    cerr << stations.size() << endl;
-
-
     vector<double> position = separateur_coordonnees(position_str);
     vector<int> capacite = conversionInt(capacite_str);
     
     // Mise à l'échelle
     for (int i = 0; i < position.size(); i += 2) {
-        position[i] = (position[i] - 48) * 1200;
-        position[i+1] = (position[i+1] - 2) * 954;
-
+        position[i] = (position[i] - 48) * 1535;
+        position[i+1] = (position[i+1] - 2) * 959;
         // Dessiner un cercle pour chaque station
         draw_circle(window, {static_cast<float>(position[i]), static_cast<float>(position[i+1])}, capacite[i / 2], Color::Red);
     }
 
-    // window.display();
+    window.display();
 
-    // // Add event loop to keep window open
-    // while (window.isOpen()) {
-    //     Event event;
-    //     while (window.pollEvent(event)) {
-    //         if (event.type == Event::Closed)
-    //             window.close();
-    //     }
-    // }
+    // Add event loop to keep window open
+    while (window.isOpen()) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+    }
 
 
     return 0;
