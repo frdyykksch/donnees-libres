@@ -43,21 +43,20 @@ int indiceMax(vector<int> t) {
 vector<string> colonne(vector<vector<string>> t, int i) {
     vector<string> j;
     for (int k = 0; k < t.size(); k++ ) {
-        j.push_back(t[k][i]);    
+        j.push_back(t[k][i]);
     }
     return j;
 }
 
-
 vector<int> conversionInt(vector<string> t) {
     vector<int> resultat = vector<int>(t.size());
-    for(int i =0; i < t.size(); i++) {
+    for(int i = 0; i < t.size(); i++) {
         istringstream(t[i]) >> resultat[i];
     }
     return resultat;
 }
 
-vector<vector<string>> selectColones(vector<vector<string>> t, int j, string valeur) {
+vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
     vector<vector<string>> resultat;
     for (auto ligne : t) {
         if (ligne[j] == valeur) {

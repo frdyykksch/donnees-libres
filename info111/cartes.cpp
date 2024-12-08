@@ -12,83 +12,85 @@ using namespace sf;
 // compilation : g++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes
 const double PI = 3.14159265359;
 
-void draw_circle(RenderWindow& window, Point center, int r, Color color) {
-    double dt = 1.0 / r;
-    for (double t = 0; t <= 2*PI; t += dt) {
-        draw_point(window, {center.x + r * cos(t), center.y + r * sin(t)}, color);
-    }
+// Fonctions SFML
+void draw_circle(RenderWindow &w, Point center, int r, Color color) {
+    CircleShape shape(r);
+    shape.setPosition(center);
+    shape.setOutlineThickness(1.f);
+    shape.setOutlineColor(color);
+    shape.setFillColor(Color::Transparent);
+    w.draw(shape);
+}
+void draw_point(RenderWindow &w, Point pos, Color color) {
+    Vertex p[] = { Vertex(pos, color) };
+    w.draw(p, 1, sf::Points);
 }
 
-vector<double> séparateur_coordonnées (vector<string> colonne) {
+/* Fonction separe coordonnées
+ * @param colonne coordonnées en string vector
+ * @return coordonnées x,y separées en double
+ */
+vector<double> separateur_coordonnees(vector<string> colonne) {
     vector<string> t;
     for (auto valeur : colonne) {
         string current = ""; 
         for (char value : valeur) {
             if (value != ',' && value != ' ') { 
                 current += value;
-            } else if (value == ',') { 
+            } else if (value == ',') {
                 t.push_back(current);
-                current = ""; 
+                current = "";
             }
         }
         if (!current.empty()) {
             t.push_back(current);
         }
     }
-
-    for (auto valeiir : t) {
-        cout << valeiir << " ";
-    }
-    cout << endl;
-
     vector<double> colonne2 = conversionDouble(t);
-    // for (auto val : colonne2) {
-    //     cout << val << " ";
-    // }
-    // cout << endl;
-
-    // for (int i = 0; i < colonne2.size(); i++) {
-    //     cout << colonne2[i] << endl;
-    // }
     return colonne2;
 }
 
 int main() {
     // Lecture du fichier CSV
-    vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv");
-    
-    // Création de la fenêtre avec fond
-    RenderWindow window(VideoMode(1200, 954), "Carte des stations Vélib");
+    vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv", 4);
+
+    // Création de la fenêtre avec carte fond
+    RenderWindow window(VideoMode(1920, 1080), "Carte des stations Vélib");
     Texture texture;
-    if (!texture.loadFromFile("donnees/Paris_plan.png")) {
-        cerr << "Erreur lors du chargement de l'image de fond" << endl;
-        return -1;
-    }
+    texture.loadFromFile("donnees/Paris_plan.png");
     Sprite background(texture);
     window.draw(background);
 
-    //création de deux tableaux qui contiennent de manière distinctes, la colone position et la colonne capacité de la station
+    // 2 tableaux qui contiennent de manière distinctes, la colonne position et la colonne capacite de la station
     vector<string> position_str = colonne(stations, 3);
-    vector<string> capacité_str = colonne(stations, 2);
+    vector<string> capacite_str = colonne(stations, 2);
+
+    cerr << stations.size() << endl;
+
+
+    vector<double> position = separateur_coordonnees(position_str);
+    vector<int> capacite = conversionInt(capacite_str);
     
-    
-    vector<double> position = séparateur_coordonnées(position_str);
-    vector<int> capacité = conversionInt(capacité_str);
-    
-    //mise à l'échelle   *1200 / 50
+    // Mise à l'échelle
     for (int i = 0; i < position.size(); i += 2) {
         position[i] = (position[i] - 48) * 1200;
         position[i+1] = (position[i+1] - 2) * 954;
 
         // Dessiner un cercle pour chaque station
-        draw_circle(window, {static_cast<int>(position[i]), static_cast<int>(position[i+1])}, capacité[i / 2], Color::Red);
+        draw_circle(window, {static_cast<float>(position[i]), static_cast<float>(position[i+1])}, capacite[i / 2], Color::Red);
     }
-    
+
+    // window.display();
+
+    // // Add event loop to keep window open
+    // while (window.isOpen()) {
+    //     Event event;
+    //     while (window.pollEvent(event)) {
+    //         if (event.type == Event::Closed)
+    //             window.close();
+    //     }
+    // }
+
+
+    return 0;
 }
-
-
-
-
-
-
-
