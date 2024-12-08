@@ -57,7 +57,7 @@ int main() {
     vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv", 4);
 
     // Création de la fenêtre avec carte fond
-    RenderWindow window(VideoMode(1536, 959), "Carte des stations Vélib");
+    RenderWindow window(VideoMode(1536, 959), "Carte des stations Vélib");  
     Texture texture;
     texture.loadFromFile("donnees/paris-carte.png");
     Sprite background(texture);
