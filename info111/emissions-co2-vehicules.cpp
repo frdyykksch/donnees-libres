@@ -42,7 +42,7 @@ int main() {
         
         // cerr << maxConsoIndex << endl;
         cout << "La voiture polluant le plus (2014) est une " << csvVoitures[maxConsoIndex][0] << " " << csvVoitures[maxConsoIndex][3] << endl;
-        cout << "Elle consomme environ " << csvVoitures[maxConsoIndex][13] << "L/100km" << endl;
+        cout << "Elle consomme environ " << csvVoitures[maxConsoIndex][13] << " L/100km" << endl;
 
         // cerr << minConsoIndex << endl;
         cout << "La voiture polluant le moins (2014) est une " << csvVoitures[minConsoIndex][0] << " " << csvVoitures[minConsoIndex][3] << endl;
