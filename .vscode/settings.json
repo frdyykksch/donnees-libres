@@ -66,6 +66,7 @@
     "sstream": "cpp",
     "iostream": "cpp",
     "vector": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "deque": "cpp"
   }
 }
