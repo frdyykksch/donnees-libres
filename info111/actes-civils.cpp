@@ -16,6 +16,7 @@ int main() {
     vector<vector<string>> stats = litTableauCSV("donnees/statistiques_de_creation_d_actes_d_etat_civil_par_arrondissement.csv");
     //Naissances
     vector<vector<string>> naissances = selectLignes(stats, 0, "Naissances");
+
     // cout << "Données de naissances:" << endl;
     // for (const auto& ligne : naissances) {
     //     for (const auto& valeur : ligne) {
@@ -26,12 +27,15 @@ int main() {
     
     vector<string> annees;
     for (int i = 2004; i < 2024; i++) {
-        annees.push_back("i");
+        annees.push_back(to_string(i));
     }
+    
     vector<int> total_par_annee_naissances = groupByInt(naissances, annees, 1, 3);
-    for (int k = 0; k < total_par_annee_naissances.size(); k++) {
-        cout << "Année " << (2004 + k) << ": " << total_par_annee_naissances[k] << endl;
-    }
+
+    // for (int k = 0; k < total_par_annee_naissances.size(); k++) {
+    //     cout << "Année " << (2004 + k) << ": " << total_par_annee_naissances[k] << endl;
+    // }
+
     int valeur_max = 0;
     int annee_naissance = 0; 
     for (int j = 0; j < total_par_annee_naissances.size(); j++) {
@@ -40,15 +44,19 @@ int main() {
             annee_naissance = 2004 + j;
         }
     }
-    cout << "L'année durant laquelle il y a le plus grand nombres de déclaration de naissances est" << annee_naissance << endl;
+    
+    cout << "L'année durant laquelle il y a le plus grand nombres de déclaration de naissances est " << annee_naissance << endl;
+   
     //Mariages
     vector<vector<string>> mariages = selectLignes(stats, 0, "Mariages");
-    cout << "Données de mariages:" << endl;
-    for (const auto& ligne : mariages) {
-        for (const auto& valeur : ligne) {
-            cout << valeur << " ";
-        }
-        cout << endl;
+    
+    // for (auto ligne : mariages) {
+    //     for (auto valeur : ligne) {
+    //         cerr << valeur << " ";
+    //     }
+    //     cerr << endl;
+    // }
+
     vector<int> total_par_annee_mariages = groupByInt(mariages, annees, 1, 3);
     int valeur_max2 = 0;
     int annee_mariage = 0; 
@@ -58,5 +66,5 @@ int main() {
             annee_mariage = 2004 + k;
         }
     }
-    cout << "L'année durant laquelle à été déclaré le plus de mariage est" << annee_mariage << endl;
+    cout << "L'année durant laquelle à été déclaré le plus de mariage est " << annee_mariage << endl;
 }
