@@ -7,7 +7,13 @@ using namespace std;
 
         // Frederik Kockisch
         
-int main() { // Frederik Kockisch
+/* 
+ * Frederik Kockisch
+ * Mariages total du fichier donné
+ * Degré de confiance - 100% - Pas de bugs
+*/ 
+
+int main() {
     ifstream fichier("donnees/statistiques-des-jours-des-mariages.txt");
     string jour;
     int mariages;

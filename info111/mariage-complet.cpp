@@ -21,6 +21,11 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 95% - Eventuels bugs avec un nom de fichier donné contenant des mauvais caractères (pas testé)
+ * Peut être résolu avec un throw runtime_error  
+*/ 
 vector<int> litTableauAnnee(string nom_fichier) {
     ifstream fichier(nom_fichier);
     string jour;
@@ -50,6 +55,11 @@ void testLitTableauAnnee() {
  * @return un numéro entre 0 et 6 correspondant au jour de la semaine ou
  * -1 si le jour n'est pas valide
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 95% - Eventuels bug si le jour n'est pas un jour (pas testé)
+ * Peut être résolu avec un throw runtime_error
+ */ 
 int indiceJour(string jour) {
     for(int i=0; i < jours.size(); i++) {
         if (jour == jours[i]) {
@@ -73,6 +83,11 @@ void testIndiceJour() {
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 95% - Eventuels bugs avec un nom de fichier donné contenant des mauvais caractères
+ * Peut être résolu avec un throw runtime_error  
+*/ 
 vector<int> litTableauJours(string nom_fichier) {
     ifstream fichier(nom_fichier);
     string jour;
@@ -102,6 +117,10 @@ void testLitTableauJours() {
  * @param t, un tableau d'entier
  * @return la somme des valeurs du tableau
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs  
+*/ 
 int somme(vector<int> t) {
     int somme = 0;
     for(int i = 0; i < t.size(); i++) {
@@ -122,6 +141,10 @@ void testSomme() {
  * @return la moyenne (entière) des valeurs
  * (on arrondit à l'entier inférieur)
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs 
+*/ 
 int moyenne(vector<int> t) {
     int sum = somme(t);
     return sum / t.size();
@@ -138,6 +161,10 @@ void testMoyenne() {
  * @param t, un tableau d'entier
  * @return l'indice de la valeur maximale ou -1 si le tableau est vide
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs  
+*/ 
 int indiceMax(vector<int> t) {
     int greatestVal = 0;
     int greatestInd = 0;
@@ -175,6 +202,10 @@ int chercheIndice(vector<string> t, string valeur) {
  * - le jour de la semaine où l'on célèbre le plus de mariages (et leur nombre)
  * - le pourcentage de mariages célébrés un samedi
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs
+*/ 
 int main() {
 
     testLitTableauAnnee();

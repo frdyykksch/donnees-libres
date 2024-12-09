@@ -5,8 +5,12 @@
 #include <string>
 using namespace std;
 
-/** Calcule et affiche le nombre de mariages un samedi entre 2010 et 2015 **/
-int main() { // Frederik Kockisch
+/* 
+ * Frederik Kockisch
+ * Calcule et affiche le nombre de mariages un samedi entre 2010 et 2022
+ * Degré de confiance - 100% - Pas de bugs
+*/ 
+int main() {
     ifstream fichier("donnees/statistiques-des-jours-des-mariages.txt");
     string jour;
     int mariages;

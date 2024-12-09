@@ -22,10 +22,14 @@ vector<string> jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Same
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages de l'année 2010+i
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs 
+*/ 
 vector<int> creeTableauAnnee(vector<vector<string>> data) {
     vector<int> resultat(annees.size(), 0);
 
-    for (auto ligne : data) {
+    for (auto ligne: data) {
         int annee = stoi(ligne[0]);
         int marriages = stoi(ligne[2]);
         int index = annee - 2010;
@@ -50,8 +54,12 @@ void testCreeTableauAnnee() {
  * @return un numéro entre 0 et 6 correspondant au jour de la semaine ou
  * -1 si le jour n'est pas valide
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs  
+*/ 
 int indiceJour(string jour) {
-    for(int i=0; i < jours.size(); i++) {
+    for(int i = 0; i < jours.size(); i++) {
         if (jour == jours[i]) {
             return i;
         }
@@ -74,6 +82,10 @@ void testIndiceJour() {
  * @return un tableau d'entiers tel que dans chaque
  * case d'indice i, on trouve le nombre total de mariages célébrés le jour i
  **/
+/* 
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs 
+*/ 
 vector<int> creeTableauJours(vector<vector<string>> data) {
     vector<int> resultat(jours.size(), 0);
     
