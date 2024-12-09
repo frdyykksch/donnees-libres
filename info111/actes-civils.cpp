@@ -5,6 +5,7 @@
 #include "tableau-donnees-avance.hpp"
 #include "tableau-lecture-csv.hpp"
 using namespace std;
+#include <clocale>
 
 // compilation: g++ tableau-donnees.cpp tableau-donnees-avance.cpp tableau-lecture-csv.cpp actes-civils.cpp -o actes-civils
 
@@ -13,6 +14,7 @@ using namespace std;
 // Julien Cassou
 // Degrès de confiance:
 int main() {
+    setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù" dans la consolle
     vector<vector<string>> stats = litTableauCSV("donnees/statistiques_de_creation_d_actes_d_etat_civil_par_arrondissement.csv");
     //Naissances
     vector<vector<string>> naissances = selectLignes(stats, 0, "Naissances");
