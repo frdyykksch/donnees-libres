@@ -64,7 +64,7 @@ confiance: présence de tests, bogues et limitations connus, etc.
   - Exercice 8 : Réalisé par Julien Cassou / Frederik Kockisch
 - Partie 4 :
   - Exercice 9 : Réalisé par Julien Cassou
-  - Exercice 10 : Réalisé par Julien Cassou (?)
+  - Exercice 10 : Réalisé par Julien Cassou / Frederik Kockisch
   - Exercice 11 : Réalisé par Frederik Kockisch
   - Exercice 12 : Réalisé par Julien Cassou
     
