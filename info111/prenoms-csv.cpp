@@ -10,6 +10,8 @@ using namespace std;
 
 /** Calcule et affiche le prénom le plus donné une année donnée
  * ainsi que le nombre de naissance cette année là **/
+// Julien Cassou
+// Degrès de confiance: 100% -compilation réussi -programme qui fonctionne 
 int main() {
     int annee;
     cout << "Entrez une année entre 2004 et 2023 :" << endl;
@@ -35,14 +37,15 @@ int main() {
 
         getline(ligne_actuelle, nombre_str, ';');
 
-        cout << nombre_str << endl;
+        // cout << nombre_str << endl;
         
         nombre = stoi(nombre_str);
 
         getline(ligne_actuelle, MF, ';');
         getline(ligne_actuelle, annee_naissance, ';');
 
-        cout << annee_naissance << endl;
+        // cout << annee_naissance << endl;
+        
         annee_naissance_int = stoi(annee_naissance);
         
         getline(ligne_actuelle, prenom, ';');

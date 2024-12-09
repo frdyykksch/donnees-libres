@@ -19,9 +19,11 @@ vector<vector<string>> petites_donnees = { { "a0", "b0"}, { "a1", "b1" } };
 void testLitTableauCSVAvecColonnes() {
     CHECK( litTableauCSV("donnees/donnees-test.csv", 5) == tableauTest);
     vector<vector<string>> t = litTableauCSV("donnees/liste_des_prenoms.csv", 5);
+    // cout << t.size() << endl;
     CHECK(t.size() == 25465);
     CHECK(t[0][1] == "M");
     CHECK(t[3][3] == "Olivia");
+    // cout << t[5][4] << endl;
     CHECK(t[5][4] == "71");
 }
 

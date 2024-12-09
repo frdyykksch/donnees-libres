@@ -1,35 +1,36 @@
 #include <stdexcept>
-#include <cctype>
 /** @file **/
 #include <iostream>
 #include "tableau-donnees.hpp"
 #include "tableau-lecture-csv.hpp"
 using namespace std;
+#include <clocale>
 
         // Julien Cassou
 
+
+// compilation: g++ tableau-donnees.cpp tableau-donnees-avance.cpp tableau-lecture-csv.cpp arbres-hauteur.cpp -o arbres-hauteur
 #include "tableau-donnees-avance.hpp"
-#include <algorithm>
+
 
     // hauteur =  8
     // genre = 11
     // espece = 12
     // nom = 15
 
+/** Lit un tableau de donnée, et affiche le nom français, le genre et l'espèce de l'arbre le
+ * plus haut de Paris **/
+// Julien Cassou
+// Degrès de confiance: 100% -compilation réussi -affiche bien l'arbre le plus haut de Paris
 int main() {
-    vector<vector<string>> t = litTableauCSV("donnees/arbresremarquablesparis.csv", 35);
+    setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù" dans la consolle
+    vector<vector<string>> t = litTableauCSV("donnees/arbresremarquablesparis.csv", 36);
     int hauteur_max = 0;
     int index_max = 0;
     vector<string> C = colonne(t, 8);
-    vector<int> tableau_hauteur;
+    vector<int> tableau_hauteur = conversionInt(C); 
 
-    for (const auto& valeur : C) {
-        if (!valeur.empty() && all_of(valeur.begin(), valeur.end(), ::isdigit)) {
-            tableau_hauteur.push_back(stoi(valeur));
-        } else {
-            tableau_hauteur.push_back(0);
-        }
-    }
+
 
     for (int i = 0; i < tableau_hauteur.size();  i++) {
         if (tableau_hauteur[i] > hauteur_max) {
