@@ -26,7 +26,7 @@ int main() {
     
     vector<string> annees;
     for (int i = 2004; i < 2024; i++) {
-        annees.push_back("i");
+        annees.push_back(to_string(i));
     }
     vector<int> total_par_annee_naissances = groupByInt(naissances, annees, 1, 3);
     for (int k = 0; k < total_par_annee_naissances.size(); k++) {
@@ -59,4 +59,5 @@ int main() {
         }
     }
     cout << "L'année durant laquelle à été déclaré le plus de mariage est" << annee_mariage << endl;
+    }
 }
