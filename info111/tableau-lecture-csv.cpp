@@ -41,7 +41,7 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
     return resultat;
 }
 
-vector<vector<string>> litTableauCSV(string nom_fichier) { // Auteurs: les profs!
+vector<vector<string>> litTableauCSV(string nom_fichier) {
     ifstream fichier(nom_fichier);
     vector<vector<string>> tableau;
     string ligne;
