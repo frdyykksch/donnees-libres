@@ -40,19 +40,23 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
     return resultat;
 }
 
-vector<vector<string>> litTableauCSV(string nom_fichier) {
-    vector<vector<string>> resultat;
+vector<vector<string>> litTableauCSV(string nom_fichier) { // Auteurs: les profs!
     ifstream fichier(nom_fichier);
+    vector<vector<string>> tableau;
     string ligne;
+    // Lecture de l'entête
     getline(fichier, ligne);
-    while (getline(fichier, ligne)) {
-        vector<string> ligne_renvoye;
-        string valeur;
-
-        while (getline(fichier, valeur, ';')) {
-            ligne_renvoye.push_back(valeur);
+    while ( getline(fichier,ligne) ) {
+        istringstream sl(ligne);
+        vector<string> ligne_tableau;
+        string v;
+        while ( getline(sl, v, ';' )) {
+            // Gestion des fichier Windows sous Linux
+            if ( v.size() > 0 and v[v.length()-1] == '\r' )
+                v.resize(v.length() - 1);
+            ligne_tableau.push_back(v);
         }
-        resultat.push_back(ligne_renvoye);
+        tableau.push_back(ligne_tableau);
     }
-    return resultat;
+    return tableau;
 }
