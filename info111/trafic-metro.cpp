@@ -22,9 +22,7 @@ vector<int> ctrTraficArr(vector<int> arrondissements, vector<int> trafic) {
     return result;
 }
 
-int main() {
-    setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù"
- 
+int main() { 
     vector<vector<string>> data = litTableauCSV("donnees/trafic-annuel-entrant-par-station-du-reseau-ferre-2021.csv", 11);
     vector<string> arrondissements = colonne(data, 10);
     vector<string> trafic = colonne(data, 3);
