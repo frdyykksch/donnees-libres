@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 using namespace std;
+#include <clocale>
 
         // Julien Cassou
 
@@ -22,6 +23,8 @@ vector<vector<string>> tableauTest = {
 /** Affiche le contenu d'un tableau de chaînes à deux dimensions
  * @param tableau un tableau à deux dimensions
  **/
+// Julien Cassou
+// Degrès confiance: 100% -test valide
 void afficheTableau(vector<vector<string>> tableau) {
     for (auto ligne : tableau) {
         for (auto element : ligne) {
@@ -42,6 +45,8 @@ void testAfficheTableau() {
  * @param nb_colonnes le nombre de colonnes du fichier
  * @return un tableau de chaines de caractères à deux dimensions
  **/
+// Julien Cassou
+// Degrès de confiance: 100% -tests passés
 vector<vector<string>> litTableau(string nom_fichier, int nb_colonnes) {
     ifstream tableau(nom_fichier);
     vector<vector<string>> resultat; 
@@ -73,6 +78,8 @@ void testLitTableau() {
  * @param i un numéro de colonne
  * @return la colonne j, représentée par un vecteur de chaines de caractères
  **/
+// Julien Cassou
+// Degrès de confiance: 100% -tests valides
 vector<string> colonne(vector<vector<string>> t, int i) {
     vector<string> j;
     for (int k = 0; k < t.size(); k++ ) {
@@ -93,6 +100,8 @@ void testColonne() {
  * @param t, un vecteur de chaines de caractères
  * @return un vecteur d'entiers
  **/
+// Julien Cassou
+// Degrès de confiance: 100% -tests valides
 vector<int> conversionInt(vector<string> t) {
     vector<int> resultat = vector<int>(t.size());
     for(int i =0; i < t.size(); i++) {
@@ -142,6 +151,8 @@ int indiceMax(vector<int> t) {
  * @return un tableau de données ne contenant que les lignes de t telles
  *  que la colonne j ait la valeur correspondant au critère
  **/
+// Julien Cassou
+// Degrès de fiabilité: 100% -tests valides
 vector<vector<string>> selectLignes(vector<vector<string>> t, int j, string valeur) {
     vector<vector<string>> resultat;
     for (auto ligne : t) {
@@ -164,7 +175,13 @@ void testSelectLignes() {
  * - le nombre de garçons et filles à qui l'on a donné ce prénom
  * - la meilleure année pour ce prénom pour les garçons et filles
  **/
+// Julien Cassou
+// Degrès de fiabilité: 100% -compilation réussi -programme qui fonctionne 
 int main() {
+
+    setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù" dans la consolle
+ 
+    // testAfficheTableau();
     testLitTableau();
     testColonne();
     testSelectLignes();

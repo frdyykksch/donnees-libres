@@ -12,7 +12,7 @@ using namespace std;
 /** Calcule et affiche le prénom le plus utilisé une année donnée
  * ainsi que le nombre de naissances cette année là **/
 // Julien Cassou
-// Degrès de confiance: 
+// Degrès de confiance: 100% -compilation réussi -programme qui fonctionne
 int main() { 
     setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù" dans la consolle
     int annee;

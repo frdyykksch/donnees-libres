@@ -27,16 +27,22 @@ int main() {
     string prenomMax = "";
     
     string ligne;
+    getline(prenoms, ligne);
     while (getline(prenoms, ligne)) {
-        stringstream ligne_actuelle(ligne);
+        istringstream ligne_actuelle(ligne);
         string nombre_str, MF, annee_naissance, prenom, total;
         int nombre, annee_naissance_int;
 
         getline(ligne_actuelle, nombre_str, ';');
+
+        cout << nombre_str << endl;
+        
         nombre = stoi(nombre_str);
 
         getline(ligne_actuelle, MF, ';');
         getline(ligne_actuelle, annee_naissance, ';');
+
+        cout << annee_naissance << endl;
         annee_naissance_int = stoi(annee_naissance);
         
         getline(ligne_actuelle, prenom, ';');

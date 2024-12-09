@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <cctype>
 /** @file **/
 #include <iostream>
 #include "tableau-donnees.hpp"
@@ -8,6 +9,7 @@ using namespace std;
         // Julien Cassou
 
 #include "tableau-donnees-avance.hpp"
+#include <algorithm>
 
     // hauteur =  8
     // genre = 11
@@ -19,7 +21,16 @@ int main() {
     int hauteur_max = 0;
     int index_max = 0;
     vector<string> C = colonne(t, 8);
-    vector<int> tableau_hauteur = conversionInt(C);
+    vector<int> tableau_hauteur;
+
+    for (const auto& valeur : C) {
+        if (!valeur.empty() && all_of(valeur.begin(), valeur.end(), ::isdigit)) {
+            tableau_hauteur.push_back(stoi(valeur));
+        } else {
+            tableau_hauteur.push_back(0);
+        }
+    }
+
     for (int i = 0; i < tableau_hauteur.size();  i++) {
         if (tableau_hauteur[i] > hauteur_max) {
             hauteur_max = tableau_hauteur[i];

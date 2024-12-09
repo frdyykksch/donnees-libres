@@ -29,6 +29,7 @@ vector<vector<string>> litTableauCSV(string nom_fichier, int nb_colonnes) {
         } 
         getline(fichier, valeur);
         
+        //  suppression du \r sous linux: aide du fichier getline-exemple
         if(valeur.size() > 0 && valeur[valeur.length()-1] == '\r') {
             valeur.resize(valeur.length() - 1);
         }
@@ -46,10 +47,15 @@ vector<vector<string>> litTableauCSV(string nom_fichier) {
     string ligne;
     getline(fichier, ligne);
     while (getline(fichier, ligne)) {
+        istringstream la_ligne_en_cours(ligne);
         vector<string> ligne_renvoye;
         string valeur;
 
-        while (getline(fichier, valeur, ';')) {
+        while (getline(la_ligne_en_cours, valeur, ';')) {
+            //  suppression du \r sous linux: aide du fichier getline-exemple
+            if(valeur.size() > 0 && valeur[valeur.length()-1] == '\r') {
+                valeur.resize(valeur.length() - 1);
+            }
             ligne_renvoye.push_back(valeur);
         }
         resultat.push_back(ligne_renvoye);
