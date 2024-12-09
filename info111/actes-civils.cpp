@@ -66,5 +66,5 @@ int main() {
             annee_mariage = 2004 + k;
         }
     }
-    cout << "L'année durant laquelle à été déclaré le plus de mariage est" << annee_mariage << endl;
-    }
+    cout << "L'année durant laquelle à été déclaré le plus de mariage est " << annee_mariage << endl;
+}
