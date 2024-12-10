@@ -32,6 +32,8 @@ void draw_point(RenderWindow &w, Point pos, Color color) {
  * @param colonne coordonnées en string vector
  * @return coordonnées x,y separées en double
  */
+// Julien Cassou
+// Degrès de confiance: 100% -tests valides
 vector<double> separateur_coordonnees(vector<string> colonne) {
     vector<string> t;
     for (auto valeur : colonne) {
@@ -52,6 +54,11 @@ vector<double> separateur_coordonnees(vector<string> colonne) {
     return colonne2;
 }
 
+
+/**  dessine la carte de toutes les stations velib de Paris à partir d'un fichier csv
+ **/
+// Julien Cassou / Frederik Kockisch
+// Degrès de confiance: 85% -compilation réussi -mais imprécis sur les points
 int main() {
     // Lecture du fichier CSV
     vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv", 4);
@@ -107,7 +114,7 @@ int main() {
 
     window.display();
 
-    // Add event loop to keep window open
+    // boucle pour garder fenêtre ouverte
     while (window.isOpen()) {
         Event event;
         while (window.pollEvent(event)) {
