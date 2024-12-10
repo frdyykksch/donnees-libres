@@ -1,3 +1,4 @@
+// g++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes -lsfml-graphics -lsfml-window -lsfml-system -I"/SFML/include"
 #include <stdexcept>
 #include <iostream>
 #include "tableau-donnees.hpp"
