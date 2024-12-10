@@ -104,7 +104,6 @@ répartition du travail dans le binôme, moyens mis en œuvre pour
 collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle de
 vos enseigants), précisez le.
 :::
-
 +++
 
 ## Prise de recul
