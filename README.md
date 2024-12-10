@@ -11,7 +11,6 @@ kernelspec:
 ---
 
 # Rapport de projet *Données libres*
-+++
 
 ## Auteurs
 
