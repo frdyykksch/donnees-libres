@@ -9,6 +9,11 @@ using namespace std;
 
         // Frederik Kockisch
 
+
+/*
+ * Frederik Kockisch 
+ * Degré de confiance 100% - Pas de bugs 
+*/
 template <typename T>
 int maxIndex(vector<T> tab) {
         int maxIndexi = 0;

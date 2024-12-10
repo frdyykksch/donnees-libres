@@ -17,6 +17,10 @@ using namespace std;
  * - les nombres de prénoms féminins et masculins différents
  * - le prénom masculin et le prénom féminin le plus populaire
  **/
+/*
+ * Frederik Kockisch
+ * Degré de confiance - 100% - Pas de bugs
+*/
 int main() {
     vector<vector<string>> data = litTableau("donnees/liste_des_prenoms.txt", 4);
 

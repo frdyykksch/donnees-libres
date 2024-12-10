@@ -11,6 +11,11 @@
 using namespace std;
 namespace plt = matplotlibcpp;
 
+
+/*
+ * Frederik Kockisch 
+ * Degré de confiance 85% - Pas sûr de la représentation du graphique 
+*/
 int main() {
     vector<vector<string>> t = litTableauCSV("donnees/BTC_USD_4h_binancedata.csv");
     vector<double> time;

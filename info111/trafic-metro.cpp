@@ -10,6 +10,14 @@ using namespace std;
 
     // Frederik Kockisch
 
+
+/* FONCTION AJOUTÉE
+ * Frederik Kockisch 
+ * Degré de confiance 100% - Pas de bugs 
+ * @param vecteur d'entiers arrondissements
+ * @param vecteur d'entiers trafic
+ * @return vecteur d'entiers result avec t[] trafic du premier arrondissement etc..
+*/
 vector<int> ctrTraficArr(vector<int> arrondissements, vector<int> trafic) {
     vector<int> result(20, 0);
 
@@ -22,6 +30,11 @@ vector<int> ctrTraficArr(vector<int> arrondissements, vector<int> trafic) {
     return result;
 }
 
+
+/*
+ * Frederik Kockisch 
+ * Degré de confiance 100% - Pas de bugs 
+*/
 int main() { 
     vector<vector<string>> data = litTableauCSV("donnees/trafic-annuel-entrant-par-station-du-reseau-ferre-2021.csv", 11);
     vector<string> arrondissements = colonne(data, 10);
