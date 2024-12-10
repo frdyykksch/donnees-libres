@@ -72,7 +72,6 @@ kernelspec:
 ```{code-cell}
 ! ./ex15-main
 ```
-+++
 
 ### Tout exécuté et testé
 
