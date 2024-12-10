@@ -12,109 +12,66 @@ kernelspec:
 
 # Rapport de projet *Données libres*
 
-*Les paragraphes en italique comme celui-ci vous donnent des
-indications sur le contenu attendu; ils sont à supprimer une fois
-votre rapport rédigé.*
-
-*Ce rapport pourra servir de support pour votre présentation orale.*
-
-*Soyez objectifs et factuels! Vous ne serez pas évalué sur ce que vous
-affirmez, mais sur la pertinence et la justesse de ce que vous
-affirmez.*
-
-+++
-
 ## Auteurs
 
-- Nom, prénom, courriel, groupe
-- Nom, prénom, courriel, groupe
-
-+++
+- Kockisch, Frederik, frederik.kockisch@etu-upsaclay.fr, MI-3
+- Cassou, Julien, julien.cassou@etu-upsaclay.fr, MI-4
 
 ## Résumé du travail effectué
 
-:::{admonition} Consignes
-
-Pour chaque exercice, décrivez brièvement l'avancement de votre projet.
-
-Exemples de réponses : «non traitée», «réalisée, documentée, testée»,
-«réalisée, sauf 2.3», «réalisée mais non testée», «réalisée sauf ...
-pour lequel notre programme ne compile pas» ou «pour lequel les tests
-de la fonction D ne passent pas».
-
-Décrivez plus en détail les questions difficiles. Précisez et décrivez
-les applications que vous avez réalisées, les difficultés rencontrées,
-les choix d'implantation que vous avez fait, etc.
-
-En plus du rapport, la documentation de chaque fonction dans le code
-devra préciser son auteur et votre degré de confiance dans
-l'implantation, ainsi que les éléments factuels motivant cette
-confiance: présence de tests, bogues et limitations connus, etc.
-
 - Partie 1 :
-  - Exercice 1 : ...
-  - Exercice 2 : ...
-  - ...
-- Partie 2 : ...
-- ...
-
-:::
-
-+++
+  - Exercice 1 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 2 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 3 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 4 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 5 : Réalisé, testé, documenté par Frederik Kockisch
+- Partie 2 : 
+  - Exercice 6 : Réalisé, testé, documenté par Frederik Kockisch
+- Partie 3 :
+  - Exercice 7 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 8 : Réalisé, testé, documenté par Julien Cassou / Frederik Kockisch
+- Partie 4 :
+  - Exercice 9 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 10 : Réalisé, testé, documenté par Julien Cassou / Frederik Kockisch
+  - Exercice 11 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 12 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 13 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 14 : Réalisé, testé, documenté par Frederik Kockisch / Julien Cassou
+  - Exercice 15 : Réalisé, testé, documenté Frederik Kockisch
 
 ## Démonstration
 
-:::{consignes}
+### Partie 4
 
-Soutenez ce que vous affirmez dans la section précédente au moyen de
-quelques exemples **bien choisis**. Vous pouvez par exemple compiler
-et lancer certains de vos programmes, lancer des tests, etc.
-
-À titre d'inspiration, vous trouverez ci-dessous un début de
-démonstration pour les premiers exercices.
-
-Notez comment on lance une commande shell en la préfixant d'un point
-d'exclamation (mais cela ne permet pas l'interaction avec
-l'utilisateur).
-
-Ne gardez que des exemples pertinents qui mettent en valeur votre
-travail. Inutile de perdre du temps sur le premier programme si vous
-avez fait les suivants plus compliqués; l'auditeur se doutera bien que
-vous avez réussi à le faire.
-
-:::
-
-+++
-
-### Partie 1
-
-#### Exercice 1
+#### Exercice 10
 
 ```{code-cell}
-! clang++ mariage-total.cpp -o mariage-total
+! clang++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes -lsfml-graphics -lsfml-window -lsfml-system -I"/SFML/include"
 ```
 
 ```{code-cell}
-! ./mariage-total
+! ./cartes
+```
+
+#### Exercice 12
+
+```{code-cell}
+! clang++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp parapluies.cpp -o parapluies
 ```
 
 ```{code-cell}
-! clang++ mariage-samedi.cpp -o mariage-samedi
+! ./parapluies
+```
+
+#### Exercice 15
+
+```{code-cell}
+! clang++ main.cpp tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp -o main -I/usr/include/python3.12 -I/usr/lib/python3/dist-packages/numpy/core/include -lpython3.12
 ```
 
 ```{code-cell}
-! ./mariage-samedi
+! ./ex15-main
 ```
-
-#### Exercice 2
-
-```{code-cell}
-! clang++ prenoms.cpp -o prenoms
-```
-
-Executez le programme `./prenoms` dans un terminal pour tester (demande une année)
-
-+++
 
 ### Tout exécuté et testé
 
@@ -132,21 +89,10 @@ Executez le programme `./prenoms` dans un terminal pour tester (demande une ann�
 
 ## Organisation du travail
 
-:::{admonition} Consignes
-Décrivez en quelques phrases comment vous vous êtes organisés pour
-travailler sur le projet: nombre d'heures consacrées au projet,
-répartition du travail dans le binôme, moyens mis en œuvre pour
-collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle de
-vos enseigants), précisez le.
-:::
-
-+++
+Durant ce projet, nous avons décidé de répartir le travail de manière équitable afin d’avancer le plus rapidement possible, ce qui a porté ses fruits par la suite. Nous avons consacré au total environ 25 heures à la réalisation de ce projet, comprenant l’écriture du code ainsi que la résolution des bugs apparents. Le fait de centraliser notre travail sur un dépôt GitHub nous a permis de travailler de manière plus efficace et rapide, notamment grâce à l’aide ponctuelle de ChatGPT, de vidéos YouTube ou de Stackoverflow (référencé à chaque utilisation dans le programme).
 
 ## Prise de recul
 
-:::{admonition} Consignes
-Décrivez en quelques phrases les difficultés rencontrées, ce que vous
-avez appris à l'occasion du projet, le cas échéant comment vous vous y
-prendriez si vous aviez à le refaire.
-:::
-
+La plupart des difficultés rencontrées durant la réalisation de ce projet étaient principalement causées par une utilisation maladroite de nos fonctions (mauvais paramètres) ou par des bugs dans nos programmes. 
+Nous avons notamment pu approfondir notre utilisation de la bibliothèque SFML (et autres dans le projet libre), apprendre à créer nos propres fonctions pour résoudre des problèmes de manière autonome, implémenter celles-ci dans d'autres programmes et réaliser des tests de débogage.
+À l'avenir, si nous devions refaire ce type de projet, il serait avantageux de ne pas accorder trop de temps à la résolution de bugs pour y revenir à la fin, afin de perdre le moins de temps possible.
