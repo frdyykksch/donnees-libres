@@ -41,49 +41,28 @@ l'implantation, ainsi que les éléments factuels motivant cette
 confiance: présence de tests, bogues et limitations connus, etc.
 
 - Partie 1 :
-  - Exercice 1 : Réalisé par Frederik Kockisch
-  - Exercice 2 : Réalisé par Julien Cassou
-  - Exercice 3 : Réalisé par Frederik Kockisch
-  - Exercice 4 : Réalisé par Julien Cassou
-  - Exercice 5 : Réalisé par Frederik Kockisch
+  - Exercice 1 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 2 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 3 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 4 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 5 : Réalisé, testé, documenté par Frederik Kockisch
 - Partie 2 : 
-  - Exercice 6 : Réalisé par Frederik Kockisch
+  - Exercice 6 : Réalisé, testé, documenté par Frederik Kockisch
 - Partie 3 :
-  - Exercice 7 : Réalisé par Julien Cassou
-  - Exercice 8 : Réalisé par Julien Cassou / Frederik Kockisch
+  - Exercice 7 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 8 : Réalisé, testé, documenté par Julien Cassou / Frederik Kockisch
 - Partie 4 :
-  - Exercice 9 : Réalisé par Julien Cassou
-  - Exercice 10 : Réalisé par Julien Cassou / Frederik Kockisch
-  - Exercice 11 : Réalisé par Frederik Kockisch
-  - Exercice 12 : Réalisé par Julien Cassou
-  - Exercice 13 : Réalisé par Frederik Kockisch
+  - Exercice 9 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 10 : Réalisé, testé, documenté par Julien Cassou / Frederik Kockisch
+  - Exercice 11 : Réalisé, testé, documenté par Frederik Kockisch
+  - Exercice 12 : Réalisé, testé, documenté par Julien Cassou
+  - Exercice 13 : Réalisé, testé, documenté par Frederik Kockisch
     
 :::
 
 +++
 
 ## Démonstration
-
-:::{consignes}
-
-Soutenez ce que vous affirmez dans la section précédente au moyen de
-quelques exemples **bien choisis**. Vous pouvez par exemple compiler
-et lancer certains de vos programmes, lancer des tests, etc.
-
-À titre d'inspiration, vous trouverez ci-dessous un début de
-démonstration pour les premiers exercices.
-
-Notez comment on lance une commande shell en la préfixant d'un point
-d'exclamation (mais cela ne permet pas l'interaction avec
-l'utilisateur).
-
-Ne gardez que des exemples pertinents qui mettent en valeur votre
-travail. Inutile de perdre du temps sur le premier programme si vous
-avez fait les suivants plus compliqués; l'auditeur se doutera bien que
-vous avez réussi à le faire.
-
-:::
-
 +++
 
 ### Partie 4
@@ -117,9 +96,6 @@ vous avez réussi à le faire.
 ```{code-cell}
 ! ./ex15-main
 ```
-
-Executez le programme `./prenoms` dans un terminal pour tester (demande une année)
-
 +++
 
 ### Tout exécuté et testé
