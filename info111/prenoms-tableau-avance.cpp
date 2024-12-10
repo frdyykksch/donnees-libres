@@ -37,9 +37,9 @@ int main() {
         years.push_back(to_string(i));
     }
     vector<int> unsortedYears = groupBy<int>(data, years, 1, 3);
-    for(auto val: unsortedYears) cerr << val << endl;
+    // for(auto val: unsortedYears) cerr << val << endl;
     int maxYear = indiceMax(unsortedYears);
-    
+
     cout << "L'année qui a eu le plus de naissances est "
         << maxYear + 2004 << " avec " << unsortedYears[maxYear] << " naissances" << endl;
     cout << "En moyenne naissent " << moyenne(unsortedYears) << " enfants par an" << endl;
