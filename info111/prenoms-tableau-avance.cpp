@@ -39,6 +39,7 @@ int main() {
     vector<int> unsortedYears = groupBy<int>(data, years, 1, 3);
     for(auto val: unsortedYears) cerr << val << endl;
     int maxYear = indiceMax(unsortedYears);
+    
     cout << "L'année qui a eu le plus de naissances est "
         << maxYear + 2004 << " avec " << unsortedYears[maxYear] << " naissances" << endl;
     cout << "En moyenne naissent " << moyenne(unsortedYears) << " enfants par an" << endl;
@@ -48,17 +49,15 @@ int main() {
     cout << "Il y a eu " << prenomsUniquesF.size() << " prénoms de fille différents et " 
          << prenomsUniquesM.size() << " prénoms de garçons" << endl;
     
-    vector<string> prenomsUniquesGarcons = distinct(dataM, 2);
-    vector<int> naissancesParPrenomM = groupBy<int>(dataM, prenomsUniquesGarcons, 2, 3);
-    int indexMaxM = indiceMax(naissancesParPrenomM);
+    vector<int> naissancesPrenomM = groupBy<int>(dataM, prenomsUniquesM, 2, 3);
+    int indexMaxM = indiceMax(naissancesPrenomM);
     
-    vector<string> prenomsUniquesFilles = distinct(dataF, 2);
-    vector<int> naissancesParPrenomF = groupBy<int>(dataF, prenomsUniquesFilles, 2, 3);
-    int indexMaxF = indiceMax(naissancesParPrenomF);
+    vector<int> naissancesPrenomF = groupBy<int>(dataF, prenomsUniquesF, 2, 3);
+    int indexMaxF = indiceMax(naissancesPrenomF);
     
-    cout << "Le prénom féminin le plus populaire est " << prenomsUniquesFilles[indexMaxF] 
-         << " avec " << naissancesParPrenomF[indexMaxF] << " naissances" << endl;
-    cout << "Le prénom masculin le plus populaire est " << prenomsUniquesGarcons[indexMaxM] 
-         << " avec " << naissancesParPrenomM[indexMaxM] << " naissances" << endl;
+    cout << "Le prénom féminin le plus populaire est " << prenomsUniquesF[indexMaxF] 
+         << " avec " << naissancesPrenomF[indexMaxF] << " naissances" << endl;
+    cout << "Le prénom masculin le plus populaire est " << prenomsUniquesM[indexMaxM] 
+         << " avec " << naissancesPrenomM[indexMaxM] << " naissances" << endl;
 }
 
