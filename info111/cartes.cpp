@@ -99,13 +99,13 @@ int main() {
             y_min = position[j];
         }
     }
-    cout << " " <<  x_max << " " << y_max <<  " " << x_min << " " << y_min << " " << endl;
+    // cout << " " <<  x_max << " " << y_max <<  " " << x_min << " " << y_min << " " << endl;
     // Mise à l'échelle
     for (int i = 0; i < position.size(); i += 2) {
         position[i] = (position[i] - x_min) / (x_max - x_min) * WINDOW_WIDTH;
         position[i+1] = (position[i+1] - y_min) / (y_max - y_min) * WINDOW_HEIGHT;
         // Dessiner un cercle pour chaque station
-        draw_circle(window, {static_cast<float>(position[i]), static_cast<float>(position[i+1])}, capacite[i / 2], Color::Red);
+        draw_circle(window, {static_cast<float>(position[i]), static_cast<float>(position[i+1])}, capacite[i / 2], Color::Red); // aide de Chat GPT, pour convertir des positions double en float.
     }
 
     window.display();
