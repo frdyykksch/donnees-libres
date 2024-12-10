@@ -97,10 +97,10 @@ kernelspec:
 
 ## Organisation du travail
 
-Durant ce projet, nous avons décidé de répartir le travail de manière équitable afin d’avancer le plus rapidement possible, ce qui a porté ses fruits par la suite. Nous avons consacré au total 25 heures à la réalisation de ce projet, comprenant l’écriture du code ainsi que la résolution des bugs apparents. Le fait de centraliser notre travail sur un dépôt GitHub nous a permis de travailler de manière plus efficace et rapide, notamment grâce à l’aide ponctuelle de ChatGPT, de vidéos YouTube ou de Stackoverflow (référencé à chaque utilisation dans le programme).
+Durant ce projet, nous avons décidé de répartir le travail de manière équitable afin d’avancer le plus rapidement possible, ce qui a porté ses fruits par la suite. Nous avons consacré au total environ 25 heures à la réalisation de ce projet, comprenant l’écriture du code ainsi que la résolution des bugs apparents. Le fait de centraliser notre travail sur un dépôt GitHub nous a permis de travailler de manière plus efficace et rapide, notamment grâce à l’aide ponctuelle de ChatGPT, de vidéos YouTube ou de Stackoverflow (référencé à chaque utilisation dans le programme).
 +++
 
 ## Prise de recul
 La plupart des difficultés rencontrées durant la réalisation de ce projet étaient principalement causées par une utilisation maladroite de nos fonctions (mauvais paramètres) ou par des bugs dans nos programmes. 
-Nous avons notamment pu approfondir notre utilisation de la bibliothèque SFML, apprendre à créer nos propres fonctions pour résoudre des problèmes de manière autonome et réaliser des tests de débogage.
-À l'avenir, si nous devions refaire ce type de projet, il serait avantageux de ne pas accorder trop de temps à la résolution de bug et d’y revenir à la fin, afin de perdre le moins de temps possible.
+Nous avons notamment pu approfondir notre utilisation de la bibliothèque SFML (et autres dans le projet libre), apprendre à créer nos propres fonctions pour résoudre des problèmes de manière autonome, implémenter celles-ci dans d'autres programmes et réaliser des tests de débogage.
+À l'avenir, si nous devions refaire ce type de projet, il serait avantageux de ne pas accorder trop de temps à la résolution de bugs pour y revenir à la fin, afin de perdre le moins de temps possible.
