@@ -1,4 +1,4 @@
-// g++ qualite-air.cpp tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp -o qualite-air -I/usr/include/python3.12 -I/usr/lib/python3/dist-packages/numpy/core/include -lpython3.12
+// g++ main.cpp tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp -o main -I/usr/include/python3.12 -I/usr/lib/python3/dist-packages/numpy/core/include -lpython3.12
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,21 +6,21 @@
 #include <chrono>
 #include <iomanip>
 #include "tableau-lecture-csv.hpp"
-#include "lib/matplotlibcpp.h"
+#include "matplotlibcpp.h"
 
 using namespace std;
 namespace plt = matplotlibcpp;
 
 int main() {
-    vector<vector<string>> t = litTableauCSV("donnees/qualite-de-lair-mesuree-dans-la-station-chatelet-2021-maintenant.csv");
+    vector<vector<string>> t = litTableauCSV("BTC_USD_4h_binancedata.csv");
     vector<double> time;
-    vector<double> co2;
+    vector<double> price;
 
     for (vector<string> ligne: t) {
         tm tm = {};
 
         istringstream ss(ligne[0]);
-        ss >> get_time(&tm, "%Y-%m-%dT%H:%M:%S+%M:%S");
+        ss >> get_time(&tm, "%Y-%m-%d %H:%M:%S");
 
         time_t time_point = mktime(&tm);
         auto timestamp = static_cast<double>(time_point);
@@ -28,7 +28,7 @@ int main() {
 
         // 2 tableaux x (temps), y (prix)
         time.push_back(timestamp);
-        co2.push_back(stod(ligne[4]));
+        price.push_back(stod(ligne[1]));
 
         // for(auto val: time) cerr << val << endl;
 
@@ -38,10 +38,10 @@ int main() {
     }
 
     // similaire à python en cours intro info
-    plt::plot(time, co2);
-    plt::title("Qualité d'air");
-    plt::xlabel("Temps");
-    plt::ylabel("CO2");
+    plt::plot(time, price);
+    plt::title("BTC Price Over Time");
+    plt::xlabel("Time (Unix Timestamp)");
+    plt::ylabel("Price (USD)");
     plt::show();
 
     return 0;

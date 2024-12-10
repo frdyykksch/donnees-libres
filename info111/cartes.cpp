@@ -16,7 +16,7 @@ const double PI = 3.14159265359;
 
 // Fonctions SFML
 void draw_circle(RenderWindow &w, Point center, int r, Color color) {
-    CircleShape shape(r);
+    CircleShape shape(r/4);
     shape.setPosition(center);
     shape.setOutlineThickness(1.f);
     shape.setOutlineColor(color);
@@ -53,11 +53,14 @@ vector<double> separateur_coordonnees(vector<string> colonne) {
 }
 
 int main() {
+    int WINDOW_WIDTH = 1920;
+    int WINDOW_HEIGHT = 1200;
+
     // Lecture du fichier CSV
     vector<vector<string>> stations = litTableauCSV("donnees/velib-emplacement-des-stations.csv", 4);
 
     // Création de la fenêtre avec carte fond
-    RenderWindow window(VideoMode(1536, 959), "Carte des stations Vélib");  
+    RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Carte des stations Vélib");  
     Texture texture;
     texture.loadFromFile("donnees/paris-carte.png");
     Sprite background(texture);
@@ -99,8 +102,8 @@ int main() {
     cout << " " <<  x_max << " " << y_max <<  " " << x_min << " " << y_min << " " << endl;
     // Mise à l'échelle
     for (int i = 0; i < position.size(); i += 2) {
-        position[i] = (position[i] - x_min) / (x_max - x_min) * 1535;
-        position[i+1] = (position[i+1] - y_min) / (y_max - y_min) * 959;
+        position[i] = (position[i] - x_min) / (x_max - x_min) * WINDOW_WIDTH;
+        position[i+1] = (position[i+1] - y_min) / (y_max - y_min) * WINDOW_HEIGHT;
         // Dessiner un cercle pour chaque station
         draw_circle(window, {static_cast<float>(position[i]), static_cast<float>(position[i+1])}, capacite[i / 2], Color::Red);
     }
