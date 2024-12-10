@@ -11,17 +11,6 @@ kernelspec:
 ---
 
 # Rapport de projet *Données libres*
-
-*Les paragraphes en italique comme celui-ci vous donnent des
-indications sur le contenu attendu; ils sont à supprimer une fois
-votre rapport rédigé.*
-
-*Ce rapport pourra servir de support pour votre présentation orale.*
-
-*Soyez objectifs et factuels! Vous ne serez pas évalué sur ce que vous
-affirmez, mais sur la pertinence et la justesse de ce que vous
-affirmez.*
-
 +++
 
 ## Auteurs
