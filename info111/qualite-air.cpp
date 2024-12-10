@@ -20,15 +20,18 @@ int main() {
         tm tm = {};
 
         istringstream ss(ligne[0]);
-        ss >> get_time(&tm, "%Y-%m-%dT%H:%M:%S+%M:%S");
+        ss >> get_time(&tm, "%Y-%m-%dT%H:%M:%S");
 
         time_t time_point = mktime(&tm);
         auto timestamp = static_cast<double>(time_point);
 
 
-        // 2 tableaux x (temps), y (prix)
+        // 2 tableaux x (temps), y (co2)
         time.push_back(timestamp);
-        co2.push_back(stod(ligne[4]));
+        // cerr << ligne[4] << endl;
+        if(ligne[4] != "ND") {
+            co2.push_back(stoi(ligne[4]));
+        } else co2.push_back(0);
 
         // for(auto val: time) cerr << val << endl;
 
