@@ -21,25 +21,7 @@ kernelspec:
 +++
 
 ## Résumé du travail effectué
-
-:::{admonition} Consignes
-
-Pour chaque exercice, décrivez brièvement l'avancement de votre projet.
-
-Exemples de réponses : «non traitée», «réalisée, documentée, testée»,
-«réalisée, sauf 2.3», «réalisée mais non testée», «réalisée sauf ...
-pour lequel notre programme ne compile pas» ou «pour lequel les tests
-de la fonction D ne passent pas».
-
-Décrivez plus en détail les questions difficiles. Précisez et décrivez
-les applications que vous avez réalisées, les difficultés rencontrées,
-les choix d'implantation que vous avez fait, etc.
-
-En plus du rapport, la documentation de chaque fonction dans le code
-devra préciser son auteur et votre degré de confiance dans
-l'implantation, ainsi que les éléments factuels motivant cette
-confiance: présence de tests, bogues et limitations connus, etc.
-
+:::
 - Partie 1 :
   - Exercice 1 : Réalisé, testé, documenté par Frederik Kockisch
   - Exercice 2 : Réalisé, testé, documenté par Julien Cassou
@@ -57,7 +39,8 @@ confiance: présence de tests, bogues et limitations connus, etc.
   - Exercice 11 : Réalisé, testé, documenté par Frederik Kockisch
   - Exercice 12 : Réalisé, testé, documenté par Julien Cassou
   - Exercice 13 : Réalisé, testé, documenté par Frederik Kockisch
-    
+  - Exercice 14 : Réalisé, testé, documenté par Frederik Kockisch / Julien Cassou
+  - Exercice 15 : Réalisé, testé, documenté Frederik Kockisch
 :::
 
 +++
