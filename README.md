@@ -86,30 +86,36 @@ vous avez réussi à le faire.
 
 +++
 
-### Partie 1
+### Partie 4
 
-#### Exercice 1
+#### Exercice 10
 
 ```{code-cell}
-! clang++ mariage-total.cpp -o mariage-total
+! clang++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes -lsfml-graphics -lsfml-window -lsfml-system -I"/SFML/include"
 ```
 
 ```{code-cell}
-! ./mariage-total
+! ./cartes
+```
+
+#### Exercice 12
+
+```{code-cell}
+! clang++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp parapluies.cpp -o parapluies
 ```
 
 ```{code-cell}
-! clang++ mariage-samedi.cpp -o mariage-samedi
+! ./parapluies
+```
+
+#### Exercice 15
+
+```{code-cell}
+! clang++ main.cpp tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp -o main -I/usr/include/python3.12 -I/usr/lib/python3/dist-packages/numpy/core/include -lpython3.12
 ```
 
 ```{code-cell}
-! ./mariage-samedi
-```
-
-#### Exercice 2
-
-```{code-cell}
-! clang++ prenoms.cpp -o prenoms
+! ./ex15-main
 ```
 
 Executez le programme `./prenoms` dans un terminal pour tester (demande une année)
