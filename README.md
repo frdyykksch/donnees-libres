@@ -17,8 +17,6 @@ kernelspec:
 - Kockisch, Frederik, frederik.kockisch@etu-upsaclay.fr, MI-3
 - Cassou, Julien, julien.cassou@etu-upsaclay.fr, MI-4
 
-+++
-
 ## Résumé du travail effectué
 
 - Partie 1 :
