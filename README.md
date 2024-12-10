@@ -97,13 +97,7 @@ kernelspec:
 
 ## Organisation du travail
 
-:::{admonition} Consignes
-Décrivez en quelques phrases comment vous vous êtes organisés pour
-travailler sur le projet: nombre d'heures consacrées au projet,
-répartition du travail dans le binôme, moyens mis en œuvre pour
-collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle de
-vos enseigants), précisez le.
-:::
+Durant ce projet, nous avons décidé de répartir le travail de manière équitable afin d’avancer le plus rapidement possible, ce qui a porté ses fruits par la suite. Nous avons consacré au total 25 heures à la réalisation de ce projet, comprenant l’écriture du code ainsi que la résolution des bugs apparents. Le fait de centraliser notre travail sur un dépôt GitHub nous a permis de travailler de manière plus efficace et rapide, notamment grâce à l’aide ponctuelle de ChatGPT, de vidéos YouTube ou de Stack Overflow (référencé à chaque utilisation dans le programme).
 +++
 
 ## Prise de recul
