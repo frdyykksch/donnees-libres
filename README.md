@@ -101,10 +101,6 @@ Durant ce projet, nous avons décidé de répartir le travail de manière équit
 +++
 
 ## Prise de recul
-
-:::{admonition} Consignes
-Décrivez en quelques phrases les difficultés rencontrées, ce que vous
-avez appris à l'occasion du projet, le cas échéant comment vous vous y
-prendriez si vous aviez à le refaire.
-:::
-
+La plupart des difficultés rencontrées durant la réalisation de ce projet étaient principalement causées par une utilisation maladroite de nos fonctions (mauvais paramètres) ou par des bugs dans nos programmes. 
+Nous avons notamment pu approfondir notre utilisation de la bibliothèque SFML, apprendre à créer nos propres fonctions pour résoudre des problèmes de manière autonome et réaliser des tests de débogage.
+À l'avenir, si nous devions refaire ce type de projet, il serait avantageux de ne pas accorder trop de temps à la résolution de bug et d’y revenir à la fin, afin de perdre le moins de temps possible.
