@@ -12,7 +12,6 @@ using namespace std;
 
         // Julien Cassou / Frederik Kockisch
 
-// compilation : g++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp cartes.cpp -o cartes
 const double PI = 3.14159265359;
 
 // Fonctions SFML
