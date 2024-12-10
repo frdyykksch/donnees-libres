@@ -9,13 +9,18 @@ using namespace std;
 // compilation: g++ tableau-donnees-avance.cpp tableau-donnees.cpp tableau-lecture-csv.cpp parapluies.cpp -o parapluies
    
    
-    //Julien Cassou
+    
 
-
+/** Lit un fichier csv, et en extrait la gare en France où l'on a retrouvé le plus de 
+ * parapluie entre 2018 et 2024
+**/
+// Julien Cassou
+// Degrès de confiance: 100% -compilation réussi -programme affiche bien la gare où l'on a retrouvé le plus de 
+// parapluie
 int main() {
     setlocale(LC_ALL, "fr_FR.UTF-8"); // aide de Chat GPT pour l'affichage des "é" et "ù" dans la consolle
  
-    vector<vector<string>> t = litTableauCSV("donnees/objets-trouves-restitution.csv", 7);
+    vector<vector<string>> t = litTableauCSV("donnees/xobjets-trouves-restitution.csv", 7);
     vector<vector<string>> parapluie = selectLignes(t ,5 ,"Parapluies");
     
     vector<string> nom_station_parapluie = colonne(parapluie, 2);
@@ -48,5 +53,5 @@ int main() {
             stations_max = valeur;
         }
     }
-    cout << "La gare o\u00F9 l'on a retrouv\u00E9 le plus de parapluie en France entre 2018 et 2024 est : " << stations_max << endl;
+    cout << "La gare où l'on a retrouvé le plus de parapluie en France entre 2018 et 2024 est : " << stations_max << endl;
 }
