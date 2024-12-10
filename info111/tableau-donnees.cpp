@@ -26,7 +26,6 @@ int somme(vector<int> t) {
     } return somme;
 }
 
-
 int indiceMax(vector<int> t) {
     int greatestVal = 0;
     int greatestInd = 0;
