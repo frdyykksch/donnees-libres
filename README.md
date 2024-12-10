@@ -11,17 +11,14 @@ kernelspec:
 ---
 
 # Rapport de projet *Données libres*
-+++
 
 ## Auteurs
 
 - Kockisch, Frederik, frederik.kockisch@etu-upsaclay.fr, MI-3
 - Cassou, Julien, julien.cassou@etu-upsaclay.fr, MI-4
 
-+++
-
 ## Résumé du travail effectué
-:::
+
 - Partie 1 :
   - Exercice 1 : Réalisé, testé, documenté par Frederik Kockisch
   - Exercice 2 : Réalisé, testé, documenté par Julien Cassou
@@ -41,12 +38,8 @@ kernelspec:
   - Exercice 13 : Réalisé, testé, documenté par Frederik Kockisch
   - Exercice 14 : Réalisé, testé, documenté par Frederik Kockisch / Julien Cassou
   - Exercice 15 : Réalisé, testé, documenté Frederik Kockisch
-:::
-
-+++
 
 ## Démonstration
-+++
 
 ### Partie 4
 
@@ -79,7 +72,6 @@ kernelspec:
 ```{code-cell}
 ! ./ex15-main
 ```
-+++
 
 ### Tout exécuté et testé
 
@@ -97,21 +89,10 @@ kernelspec:
 
 ## Organisation du travail
 
-:::{admonition} Consignes
-Décrivez en quelques phrases comment vous vous êtes organisés pour
-travailler sur le projet: nombre d'heures consacrées au projet,
-répartition du travail dans le binôme, moyens mis en œuvre pour
-collaborer, etc. Si vous avez bénéficié d'aide (en dehors de celle de
-vos enseigants), précisez le.
-:::
-
-+++
+Durant ce projet, nous avons décidé de répartir le travail de manière équitable afin d’avancer le plus rapidement possible, ce qui a porté ses fruits par la suite. Nous avons consacré au total environ 25 heures à la réalisation de ce projet, comprenant l’écriture du code ainsi que la résolution des bugs apparents. Le fait de centraliser notre travail sur un dépôt GitHub nous a permis de travailler de manière plus efficace et rapide, notamment grâce à l’aide ponctuelle de ChatGPT, de vidéos YouTube ou de Stackoverflow (référencé à chaque utilisation dans le programme).
 
 ## Prise de recul
 
-:::{admonition} Consignes
-Décrivez en quelques phrases les difficultés rencontrées, ce que vous
-avez appris à l'occasion du projet, le cas échéant comment vous vous y
-prendriez si vous aviez à le refaire.
-:::
-
+La plupart des difficultés rencontrées durant la réalisation de ce projet étaient principalement causées par une utilisation maladroite de nos fonctions (mauvais paramètres) ou par des bugs dans nos programmes. 
+Nous avons notamment pu approfondir notre utilisation de la bibliothèque SFML (et autres dans le projet libre), apprendre à créer nos propres fonctions pour résoudre des problèmes de manière autonome, implémenter celles-ci dans d'autres programmes et réaliser des tests de débogage.
+À l'avenir, si nous devions refaire ce type de projet, il serait avantageux de ne pas accorder trop de temps à la résolution de bugs pour y revenir à la fin, afin de perdre le moins de temps possible.
