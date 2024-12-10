@@ -16,7 +16,7 @@ void draw_line(RenderWindow &w, Point pos1, Point pos2, Color color) {
 void draw_circle(RenderWindow &w, Point center, int r, Color color) {
     CircleShape shape(r);
     shape.setPosition(center);
-    shape.setOutlineThickness(1.f);
+    shape.setOutlineThickness(0.f);
     shape.setOutlineColor(color);
     shape.setFillColor(Color::Transparent);
     w.draw(shape);
